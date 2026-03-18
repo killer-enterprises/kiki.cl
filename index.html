@@ -1,11 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Killer Industries</title>
+  <title>Killer Weddings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f5f1eb;
+      color: #3e3e3e;
+    }
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #eae3d9;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #7a746d;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero-img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    .details {
+      line-height: 1.8;
+    }
+
+    .team {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .team img {
+      width: 180px;
+      border-radius: 8px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #3e3e3e;
+      color: white;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 12px;
+      color: #9a948d;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Killer Industries</h1>
-  <p>Strategic Advisory in Commercial Law & Mining</p>
+
+<header>
+  <h1>Killer Weddings</h1>
+  <p>Boutique Event Production</p>
+</header>
+
+<section>
+  <h2>Sobre el Evento</h2>
+  <div class="details">
+    <p>
+      El día 21 de marzo de 2026 se celebrará el matrimonio de
+      <strong>Santiago Romero Weibel</strong> y
+      <strong>Josefina Gallardo Oyarzún</strong>
+      en la localidad de Llanquihue, Chile.
+    </p>
+
+    <p>
+      La ceremonia reunirá a familiares y cercanos en un entorno cuidadosamente
+      seleccionado, con un enfoque en experiencia, estética y coordinación integral.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Familias</h2>
+  <p>
+    Acompañan este evento:
+  </p>
+
+  <p>
+    Alberto Romero & Jennifer Weibel<br>
+    Javier Gallardo & Tatiana Oyarzún
+  </p>
+</section>
+
+<section>
+  <h2>Producción</h2>
+
+  <div class="team">
+    <img src="kiki.jpg" alt="Kiki">
+
+    <div>
+      <p><strong>Kiki, Princess Killer Juanita III</strong></p>
+      <p>Directora Creativa</p>
+
+      <p style="font-size: 14px; color: #7a746d;">
+        Especializada en coordinación instintiva, supervisión territorial y toma de decisiones no verbal.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Deja tu mensaje</h2>
+
+  <form class="form" action="https://formspree.io/f/yourcode" method="POST">
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <textarea name="mensaje" rows="4" placeholder="Mensaje para los novios" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<footer>
+  © Killer Weddings — All rights reserved
+</footer>
+
 </body>
 </html>
