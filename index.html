@@ -182,11 +182,15 @@ footer {
 <section>
   <h2>Deja tu mensaje a los novios</h2>
 
-  <form class="form" action="https://formspree.io/f/xqeywyba" method="POST">
-    <input type="text" name="nombre" placeholder="Nombre" required>
-    <textarea name="mensaje" rows="4" placeholder="Mensaje para los novios" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
+  <form class="form" action="https://formspree.io/f/xqeywyba" method="POST" enctype="multipart/form-data">
+  <input type="text" name="nombre" placeholder="Nombre" required>
+
+  <textarea name="mensaje" rows="4" placeholder="Mensaje para los novios" required></textarea>
+
+  <input type="file" name="archivo" accept="image/*">
+
+  <button type="submit">Enviar</button>
+</form>
 </section>
 
 <footer>
