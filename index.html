@@ -66,15 +66,17 @@ h2 {
 }
 
 .countdown {
-  font-size: 22px;
-  margin-top: 10px;
+  font-size: 28px;
+  margin-top: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  animation: pulse 2s infinite;
 }
 
-iframe {
-  width: 100%;
-  height: 300px;
-  border: none;
-  border-radius: 8px;
+@keyframes pulse {
+  0% {opacity: 0.6;}
+  50% {opacity: 1;}
+  100% {opacity: 0.6;}
 }
 
 footer {
@@ -192,7 +194,6 @@ footer {
 </footer>
 
 <script>
-// COUNTDOWN
 const countdown = document.getElementById("countdown");
 const eventDate = new Date("March 21, 2026 11:30:00").getTime();
 
@@ -200,11 +201,18 @@ setInterval(() => {
   const now = new Date().getTime();
   const distance = eventDate - now;
 
+  if (distance <= 0) {
+    countdown.innerHTML = "¡¡PATO-LAVIA!!";
+    countdown.style.fontSize = "36px";
+    countdown.style.fontWeight = "bold";
+    countdown.style.letterSpacing = "2px";
+    return;
+  }
+
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
 
   countdown.innerHTML = `Faltan ${days} días y ${hours} horas`;
-
 }, 1000);
 </script>
 
