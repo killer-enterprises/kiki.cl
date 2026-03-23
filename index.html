@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Killer Weddings</title>
+<title>Josefina & Santiago</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -17,7 +17,6 @@ header {
   padding: 80px 20px;
   text-align: center;
   background-color: #eae3d9;
-  animation: fadeIn 1.5s ease;
 }
 
 header h1 {
@@ -26,43 +25,26 @@ header h1 {
   letter-spacing: 2px;
 }
 
-header p {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #7a746d;
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header a:hover {
+  opacity: 0.7;
+  transition: 0.3s ease;
 }
 
 section {
   max-width: 900px;
   margin: 60px auto;
   padding: 0 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s ease forwards;
 }
-
-section:nth-child(2){animation-delay: 0.2s;}
-section:nth-child(3){animation-delay: 0.4s;}
-section:nth-child(4){animation-delay: 0.6s;}
-section:nth-child(5){animation-delay: 0.8s;}
-section:nth-child(6){animation-delay: 1s;}
-section:nth-child(7){animation-delay: 1.2s;}
 
 h2 {
   font-weight: normal;
-  letter-spacing: 1px;
   margin-bottom: 20px;
-}
-
-.team {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.team img {
-  width: 180px;
-  border-radius: 8px;
+  letter-spacing: 1px;
 }
 
 .countdown {
@@ -70,13 +52,27 @@ h2 {
   margin-top: 20px;
   font-weight: 300;
   letter-spacing: 1px;
-  animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-  0% {opacity: 0.6;}
-  50% {opacity: 1;}
-  100% {opacity: 0.6;}
+img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 14px 28px;
+  background-color: #3e3e3e;
+  color: white;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #6b6257;
 }
 
 footer {
@@ -85,195 +81,119 @@ footer {
   font-size: 12px;
   color: #9a948d;
 }
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.team img {
-  width: 180px;
-  border-radius: 8px;
-  transition: 0.3s ease;
-}
 </style>
-  
 </head>
 
 <body>
 
 <header>
-
-    <h1>
-    <a href="index.html" style="text-decoration:none; color:inherit;">
-      Josefina & Santiago
-    </a>
+  <h1>
+    <a href="index.html">Josefina & Santiago</a>
   </h1>
-  <p>21 · Marzo · 2026</p>
-  <p style="margin-top:10px; font-size:13px; letter-spacing:2px; color:#9a948d;">
-  Produced by Killer Weddings
-</p>
+
+  <p style="margin-top:10px; letter-spacing:2px;">
+    SAVE THE DATE — 23 · Octubre · 2026
+  </p>
+
+  <p style="font-size:14px; color:#7a746d;">
+    Gracias por ser parte de un día inolvidable
+  </p>
+
+  <p style="font-size:12px; color:#9a948d;">
+    21 · Marzo · 2026 — Llanquihue, Chile
+  </p>
+
   <div class="countdown" id="countdown"></div>
-  <p style="font-size:12px; color:#9a948d; margin-top:5px;">
-  Llanquihue, Chile
-</p>
 </header>
+
 <section>
-  <h2>Sobre el Evento</h2>
-  <p>
-    El día 21 de marzo de 2026 se celebra el matrimonio de
-    <strong>Josefina Gallardo Oyarzún</strong> y
-    <strong>Santiago Romero Weibel</strong>
-    en la localidad de Llanquihue, Chile.
-  </p>
+  <h2>Agradecimiento</h2>
+
+  <img src="juntos2.JPG" alt="Josefina y Santiago">
 
   <p>
-    La ceremonia reunirá a familiares y cercanos en un entorno cuidadosamente
-    seleccionado, con un enfoque en experiencia, estética y coordinación integral.
-  </p>
-</section>
-  
-<div style="margin-top:25px; text-align:center;">
-  <a href="novios.html">
-    <button style="
-      padding: 12px 24px;
-      background-color: transparent;
-      border: 1px solid #3e3e3e;
-      color: #3e3e3e;
-      font-size: 13px;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    "
-    onmouseover="this.style.backgroundColor='#3e3e3e'; this.style.color='white'"
-    onmouseout="this.style.backgroundColor='transparent'; this.style.color='#3e3e3e'">
-      Conoce a los novios
-    </button>
-  </a>
-</div>
-  
-  <section>
-  <h2>Código de Vestimenta</h2>
-  <p><strong>Country Chic/Semi Formal</strong></p>
-  <p style="color:#7a746d;">
-    Se recomienda considerar elementos acordes al entorno natural y a la duración extendida del evento.
+    Queremos agradecer sinceramente a todos quienes nos acompañaron en este día tan especial.
+    Su presencia, cariño y energía hicieron de esta celebración algo que recordaremos para siempre.
   </p>
 </section>
 
 <section>
-  <h2>Itinerario</h2>
-  <p>
-    11:30 — Recepción de invitados<br>
-    12:00 — Inicio de ceremonia<br><br>
+  <h2>Revive y comparte</h2>
 
-    Posteriormente, se dará paso a un aperitivo, almuerzo y asado
-    que se extenderá durante la jornada.
+  <p>
+    Si tienes fotos o registros del evento, nos encantaría poder recibirlos y revivir juntos ese día.
   </p>
 
-  <p style="color:#7a746d;">
-    El cierre del evento será determinado según condiciones externas y decisiones del vecino del final del pasillo.
+  <div style="text-align:center; margin-top:20px;">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8QcaYEyEnGMtGyPe3E7HVTTGjsc9m4uN-35xyOPVGA28G-A/viewform" target="_blank">
+      <button>Compartir recuerdos</button>
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>Información adicional</h2>
+
+  <p>
+    Para quienes lo han consultado, hemos dejado disponible un registro de referencia.
+  </p>
+
+  <p style="margin-top:20px;">
+    Código Novios Falabella: <strong>2103202</strong>
+  </p>
+</section>
+
+<section>
+  <h2>Próximo encuentro</h2>
+
+  <p>
+    El 23 de octubre de 2026 celebraremos nuestra ceremonia religiosa en Casona Johnson.
+    Más información será compartida próximamente.
   </p>
 </section>
 
 <section>
   <h2>Ubicación</h2>
-<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2999.1137298237927!2d-73.01663772394669!3d-41.262859571315865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE1JzQ2LjMiUyA3M8KwMDAnNTAuNiJX!5e0!3m2!1ses-419!2scl!4v1773855672992!5m2!1ses-419!2scl" style="width:100%; height:400px; border:0; border-radius:8px;"
-  allowfullscreen="" loading="lazy"> referrerpolicy="no-referrer-when-downgrade"></iframe></section>
 
-<section>
-  <h2>Mensajes & Registro del Evento</h2>
+  <p>Punto de encuentro y coordinación.</p>
 
-  <p style="max-width:600px; color:#7a746d;">
-    Para compartir mensajes con los novios o subir registros del evento,
-    hemos habilitado un canal dedicado de recepción.
-  </p>
-  <p style="font-size:13px; letter-spacing:1px;">
-  Plataforma externa
-  </p>
-  <div style="margin-top:30px;">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8QcaYEyEnGMtGyPe3E7HVTTGjsc9m4uN-35xyOPVGA28G-A/viewform?usp=dialog" target="_blank">
-      <button style="
-        padding: 14px 28px;
-        background-color: #3e3e3e;
-        color: white;
-        border: none;
-        font-size: 14px;
-        letter-spacing: 1px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      "
-      onmouseover="this.style.backgroundColor='#6b6257'"
-      onmouseout="this.style.backgroundColor='#3e3e3e'">
-        Acceder al canal
-      </button>
-    </a>
-  </div>
-
-  <p style="margin-top:15px; font-size:12px; color:#9a948d;">
-    La información será procesada conforme a disponibilidad operativa.
-  </p>
-</section>
-  
-<section>
-  <h2>Familias</h2>
-  <p>
-    Hacen posible este evento:
-  </p>
-
-  <p>
-    Alberto Romero & Jennifer Weibel<br>
-    Javier Gallardo & Tatiana Oyarzún
-  </p>
+  <iframe 
+    src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3521.1916449719592!2d-70.68389342411984!3d-33.198065773490455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662bba5f5d1e749%3A0x4a8b92aca9620a00!2sCasona%20Reina%20Sur%20Juan%20Pablo%20Johnson!5e1!3m2!1ses-419!2scl!4v1774296077616!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+    width="100%" 
+    height="400" 
+    style="border:0; border-radius:8px;" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
 </section>
 
 <section>
   <h2>Producción</h2>
 
-  <div class="team">
-    <img src="kiki.jpeg" alt="Kiki">
-
-    <div>
-      <p><strong>Kiki, Princess Killer Juanita III</strong></p>
-      <p>Directora Creativa</p>
-
-      <p style="font-size: 14px; color: #7a746d;">
-        Especializada en coordinación instintiva, supervisión territorial y toma de decisiones no verbal.
-      </p>
-    </div>
-  </div>
-<p style="font-size: 12px; color: #9a948d; margin-top: 20px;">
-  All operations are subject to environmental and behavioral conditions.
-</p>
+  <p>
+    Producción y supervisión general a cargo de Kiki.
+  </p>
 </section>
 
-
-  
 <footer>
-  © Killer Weddings — All rights reserved<br>
-  <a href="mailto:info@kiki.cl" style="color: #9a948d; text-decoration: none;">
+  © Josefina & Santiago<br>
+  <a href="mailto:info@kiki.cl" style="color:#9a948d; text-decoration:none;">
     info@kiki.cl
   </a>
 </footer>
 
 <script>
 const countdown = document.getElementById("countdown");
-const eventDate = new Date("March 21, 2026 11:30:00").getTime();
+const eventDate = new Date("October 23, 2026 12:00:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
   const distance = eventDate - now;
 
   if (distance <= 0) {
-    countdown.innerHTML = "0 días y 0 horas; ¡¡PATO-LAVIA!!";
-    countdown.style.fontSize = "36px";
+    countdown.innerHTML = "UNA HISTORIA PARA SIEMPRE";
+    countdown.style.fontSize = "32px";
     countdown.style.fontWeight = "bold";
-    countdown.style.letterSpacing = "2px";
     return;
   }
 
