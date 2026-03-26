@@ -22,34 +22,50 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
 }
 
-/* HERO */
+/* HEADER */
 
 header {
   background: var(--soft);
-  padding: 140px 20px 120px;
+  padding: 120px 20px 90px;
   text-align: center;
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 46px;
+  font-size: 44px;
   margin: 0;
-  letter-spacing: 1px;
 }
 
 .subtitle {
-  margin-top: 12px;
+  margin-top: 10px;
   font-size: 13px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 .countdown {
-  margin-top: 30px;
+  margin-top: 25px;
   font-size: 18px;
-  font-weight: 300;
+}
+
+/* BOTON NAV */
+
+.nav-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 22px;
+  border: 1px solid var(--text);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: var(--text);
+  color: white;
 }
 
 /* GENERAL */
@@ -61,47 +77,48 @@ h1 {
 }
 
 .section {
-  margin: 140px 0;
+  margin: 90px 0;
   text-align: center;
+}
+
+.section.compact {
+  margin: 60px 0;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
   font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 p {
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .divider {
-  width: 60px;
+  width: 50px;
   height: 1px;
   background: var(--line);
-  margin: 80px auto;
+  margin: 50px auto;
 }
 
 img {
   width: 100%;
   border-radius: 6px;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 /* BUTTON */
 
 .button {
   display: inline-block;
-  margin-top: 25px;
-  padding: 12px 28px;
+  margin-top: 20px;
+  padding: 12px 26px;
   border: 1px solid var(--text);
   font-size: 13px;
-  letter-spacing: 1px;
   text-decoration: none;
   color: var(--text);
-  transition: all 0.3s ease;
 }
 
 .button:hover {
@@ -113,17 +130,17 @@ img {
 
 iframe {
   width: 100%;
-  height: 400px;
+  height: 380px;
   border: 0;
   border-radius: 6px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 /* FOOTER */
 
 .footer {
   text-align: center;
-  margin: 120px 0 40px;
+  margin: 80px 0 40px;
   font-size: 12px;
   color: #8a857f;
 }
@@ -137,6 +154,8 @@ iframe {
   <h1>Josefina & Santiago</h1>
   <div class="subtitle">SAVE THE DATE · 23 OCTOBER 2026</div>
   <div class="countdown" id="countdown"></div>
+
+  <a href="novios.html" class="nav-button">Conoce a los novios</a>
 </header>
 
 <div class="container">
@@ -149,10 +168,6 @@ iframe {
       El 23 de octubre de 2026 celebraremos nuestra ceremonia religiosa en Casona Johnson.
     </p>
 
-    <p style="font-style: italic; margin-top:20px;">
-      Nos encantaría que nos acompañen.
-    </p>
-
     <a href="save-the-date.html" class="button">Ver detalles</a>
   </div>
 
@@ -160,7 +175,7 @@ iframe {
 
   <!-- TRANSICIÓN -->
 
-  <div class="section">
+  <div class="section compact">
     <p style="font-style: italic;">
       Este encuentro es también una continuación.
     </p>
@@ -174,14 +189,14 @@ iframe {
     <h2>21 de marzo, 2026</h2>
 
     <p>
-      Queremos agradecer sinceramente a todos quienes nos acompañaron en nuestro matrimonio civil en Llanquihue.
+      Queremos agradecer sinceramente a todos quienes nos acompañaron en nuestro matrimonio civil.
     </p>
 
     <p>
-      Su presencia, cariño y energía hicieron de ese día algo que recordaremos para siempre.
+      Su presencia hizo de ese día algo que recordaremos para siempre.
     </p>
 
-    <img src="juntos2.JPG" alt="Josefina y Santiago">
+    <img src="juntos2.JPG">
   </div>
 
   <div class="divider"></div>
@@ -192,7 +207,7 @@ iframe {
     <h2>Revive y comparte</h2>
 
     <p>
-      Si tienes fotos o registros de ese día, nos encantaría poder recibirlos.
+      Si tienes fotos o registros del evento, nos encantaría recibirlos.
     </p>
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8QcaYEyEnGMtGyPe3E7HVTTGjsc9m4uN-35xyOPVGA28G-A/viewform" target="_blank" class="button">
@@ -204,14 +219,10 @@ iframe {
 
   <!-- REGALO -->
 
-  <div class="section">
+  <div class="section compact">
     <h2>Información adicional</h2>
 
     <p>
-      Para quienes lo han consultado, hemos dejado disponible una referencia.
-    </p>
-
-    <p style="margin-top:20px;">
       Código Novios Falabella: <strong>2103202</strong>
     </p>
   </div>
@@ -223,13 +234,10 @@ iframe {
   <div class="section">
     <h2>Ubicación</h2>
 
-    <p>
-      Punto de encuentro para la próxima celebración.
-    </p>
+    <p>Punto de encuentro para la próxima celebración.</p>
 
     <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3521.1916449719592!2d-70.68389342411984!3d-33.198065773490455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662bba5f5d1e749%3A0x4a8b92aca9620a00!2sCasona%20Reina%20Sur%20Juan%20Pablo%20Johnson!5e1!3m2!1ses-419!2scl!4v1774296077616!5m2!1ses-419!2scl"
-      loading="lazy">
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3521.1916449719592!2d-70.68389342411984!3d-33.198065773490455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662bba5f5d1e749%3A0x4a8b92aca9620a00!2sCasona%20Reina%20Sur%20Juan%20Pablo%20Johnson!5e1!3m2!1ses-419!2scl!4v1774296077616!5m2!1ses-419!2scl">
     </iframe>
   </div>
 
@@ -240,7 +248,7 @@ iframe {
   <div class="section">
     <h2>Producción</h2>
 
-    <img src="kiki.jpeg" style="max-width:200px;">
+    <img src="kiki.jpeg" style="max-width:180px;">
 
     <p style="margin-top:20px;">
       <strong>Kiki</strong><br>
@@ -251,7 +259,7 @@ iframe {
       Especializada en coordinación instintiva y supervisión territorial.
     </p>
 
-    <p style="font-size:12px; color:#9a948d; margin-top:20px;">
+    <p style="font-size:12px; color:#9a948d;">
       All operations are subject to environmental and behavioral conditions.
     </p>
   </div>
