@@ -8,36 +8,51 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  background-color: #f5f1eb;
-  color: #2f2f2f;
-  font-family: 'Inter', sans-serif;
+
+:root {
+  --bg: #f5f1eb;
+  --soft: #eae3d9;
+  --text: #2f2f2f;
+  --accent: #7a8a7a;
+  --line: #d8d2c8;
 }
 
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HERO */
+
 header {
-  padding: 120px 20px;
+  background: var(--soft);
+  padding: 140px 20px 120px;
   text-align: center;
-  background-color: #eae3d9;
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 44px;
+  font-size: 46px;
   margin: 0;
+  letter-spacing: 1px;
 }
 
 .subtitle {
-  margin-top: 10px;
-  letter-spacing: 2px;
+  margin-top: 12px;
   font-size: 13px;
+  letter-spacing: 3px;
 }
 
 .countdown {
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
 }
+
+/* GENERAL */
 
 .container {
   max-width: 680px;
@@ -46,26 +61,27 @@ h1 {
 }
 
 .section {
-  margin: 120px 0;
+  margin: 140px 0;
   text-align: center;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
+  font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
 }
 
 p {
-  line-height: 1.7;
   font-size: 15px;
+  line-height: 1.8;
 }
 
 .divider {
   width: 60px;
   height: 1px;
-  background: #d8d2c8;
-  margin: 60px auto;
+  background: var(--line);
+  margin: 80px auto;
 }
 
 img {
@@ -74,29 +90,44 @@ img {
   margin-top: 30px;
 }
 
+/* BUTTON */
+
 .button {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 26px;
-  border: 1px solid #2f2f2f;
+  margin-top: 25px;
+  padding: 12px 28px;
+  border: 1px solid var(--text);
   font-size: 13px;
   letter-spacing: 1px;
   text-decoration: none;
-  color: #2f2f2f;
+  color: var(--text);
   transition: all 0.3s ease;
 }
 
 .button:hover {
-  background: #2f2f2f;
+  background: var(--text);
   color: white;
 }
 
+/* MAP */
+
+iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: 6px;
+  margin-top: 30px;
+}
+
+/* FOOTER */
+
 .footer {
   text-align: center;
-  margin: 100px 0 40px;
+  margin: 120px 0 40px;
   font-size: 12px;
   color: #8a857f;
 }
+
 </style>
 </head>
 
@@ -104,65 +135,125 @@ img {
 
 <header>
   <h1>Josefina & Santiago</h1>
-  <div class="subtitle">23 · Octubre · 2026</div>
+  <div class="subtitle">SAVE THE DATE · 23 OCTOBER 2026</div>
   <div class="countdown" id="countdown"></div>
-
-  <div style="margin-top:30px;">
-    <a href="novios.html" class="button">Conoce a los novios</a>
-  </div>
 </header>
 
 <div class="container">
 
-  <div class="section">
-    <h2>Agradecimiento</h2>
-    <p>
-      Queremos agradecer sinceramente a todos quienes nos acompañaron el 21 de marzo.
-      Su presencia hizo de ese día algo que recordaremos siempre.
-    </p>
-    <img src="juntos2.JPG">
-  </div>
-
-  <div class="divider"></div>
+  <!-- SAVE THE DATE -->
 
   <div class="section">
     <h2>Próximo encuentro</h2>
     <p>
       El 23 de octubre de 2026 celebraremos nuestra ceremonia religiosa en Casona Johnson.
     </p>
-    <a href="save-the-date.html" class="button">Ver Save the Date</a>
+
+    <p style="font-style: italic; margin-top:20px;">
+      Nos encantaría que nos acompañen.
+    </p>
+
+    <a href="save-the-date.html" class="button">Ver detalles</a>
   </div>
 
   <div class="divider"></div>
 
+  <!-- TRANSICIÓN -->
+
   <div class="section">
-    <h2>Compartir recuerdos</h2>
-    <p>Si tienes fotos del evento, nos encantaría recibirlas.</p>
-    <a href="https://docs.google.com/forms/..." target="_blank" class="button">
-      Subir fotos
+    <p style="font-style: italic;">
+      Este encuentro es también una continuación.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- AGRADECIMIENTO -->
+
+  <div class="section">
+    <h2>21 de marzo, 2026</h2>
+
+    <p>
+      Queremos agradecer sinceramente a todos quienes nos acompañaron en nuestro matrimonio civil en Llanquihue.
+    </p>
+
+    <p>
+      Su presencia, cariño y energía hicieron de ese día algo que recordaremos para siempre.
+    </p>
+
+    <img src="juntos2.JPG" alt="Josefina y Santiago">
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FOTOS -->
+
+  <div class="section">
+    <h2>Revive y comparte</h2>
+
+    <p>
+      Si tienes fotos o registros de ese día, nos encantaría poder recibirlos.
+    </p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8QcaYEyEnGMtGyPe3E7HVTTGjsc9m4uN-35xyOPVGA28G-A/viewform" target="_blank" class="button">
+      Compartir recuerdos
     </a>
   </div>
 
   <div class="divider"></div>
 
+  <!-- REGALO -->
+
   <div class="section">
-    <h2>Referencia</h2>
-    <p>Código Novios Falabella: <strong>2103202</strong></p>
+    <h2>Información adicional</h2>
+
+    <p>
+      Para quienes lo han consultado, hemos dejado disponible una referencia.
+    </p>
+
+    <p style="margin-top:20px;">
+      Código Novios Falabella: <strong>2103202</strong>
+    </p>
   </div>
 
   <div class="divider"></div>
+
+  <!-- UBICACIÓN -->
 
   <div class="section">
     <h2>Ubicación</h2>
-    <iframe src="https://www.google.com/maps/embed?..." width="100%" height="400" style="border:0; border-radius:6px;"></iframe>
+
+    <p>
+      Punto de encuentro para la próxima celebración.
+    </p>
+
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3521.1916449719592!2d-70.68389342411984!3d-33.198065773490455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662bba5f5d1e749%3A0x4a8b92aca9620a00!2sCasona%20Reina%20Sur%20Juan%20Pablo%20Johnson!5e1!3m2!1ses-419!2scl!4v1774296077616!5m2!1ses-419!2scl"
+      loading="lazy">
+    </iframe>
   </div>
 
   <div class="divider"></div>
 
+  <!-- PRODUCCIÓN -->
+
   <div class="section">
     <h2>Producción</h2>
+
     <img src="kiki.jpeg" style="max-width:200px;">
-    <p><strong>Kiki</strong><br>Event Direction</p>
+
+    <p style="margin-top:20px;">
+      <strong>Kiki</strong><br>
+      Event Direction
+    </p>
+
+    <p style="font-size:13px; color:#7a746d;">
+      Especializada en coordinación instintiva y supervisión territorial.
+    </p>
+
+    <p style="font-size:12px; color:#9a948d; margin-top:20px;">
+      All operations are subject to environmental and behavioral conditions.
+    </p>
   </div>
 
 </div>
@@ -179,10 +270,15 @@ setInterval(() => {
   const now = new Date().getTime();
   const distance = eventDate - now;
 
+  if (distance <= 0) {
+    countdown.innerHTML = "UNA HISTORIA PARA SIEMPRE";
+    return;
+  }
+
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
 
-  countdown.innerHTML = `${days} días · ${hours} hrs`;
+  countdown.innerHTML = `Faltan ${days} días · ${hours} hrs`;
 }, 1000);
 </script>
 
