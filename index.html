@@ -5,81 +5,97 @@
 <title>Josefina & Santiago</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
   background-color: #f5f1eb;
-  color: #3e3e3e;
+  color: #2f2f2f;
+  font-family: 'Inter', sans-serif;
 }
 
 header {
-  padding: 80px 20px;
+  padding: 120px 20px;
   text-align: center;
   background-color: #eae3d9;
 }
 
-header h1 {
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
   margin: 0;
-  font-size: 42px;
+}
+
+.subtitle {
+  margin-top: 10px;
   letter-spacing: 2px;
-}
-
-header a {
-  text-decoration: none;
-  color: inherit;
-}
-
-header a:hover {
-  opacity: 0.7;
-  transition: 0.3s ease;
-}
-
-section {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-
-h2 {
-  font-weight: normal;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+  font-size: 13px;
 }
 
 .countdown {
-  font-size: 28px;
-  margin-top: 20px;
+  margin-top: 30px;
+  font-size: 20px;
   font-weight: 300;
-  letter-spacing: 1px;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  margin: 120px 0;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: #d8d2c8;
+  margin: 60px auto;
 }
 
 img {
   width: 100%;
-  border-radius: 8px;
-  margin-top: 20px;
+  border-radius: 6px;
+  margin-top: 30px;
 }
 
-button {
-  padding: 14px 28px;
-  background-color: #3e3e3e;
-  color: white;
-  border: none;
-  font-size: 14px;
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 26px;
+  border: 1px solid #2f2f2f;
+  font-size: 13px;
   letter-spacing: 1px;
-  cursor: pointer;
+  text-decoration: none;
+  color: #2f2f2f;
   transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #6b6257;
+.button:hover {
+  background: #2f2f2f;
+  color: white;
 }
 
-footer {
+.footer {
   text-align: center;
-  padding: 40px;
+  margin: 100px 0 40px;
   font-size: 12px;
-  color: #9a948d;
+  color: #8a857f;
 }
 </style>
 </head>
@@ -87,124 +103,73 @@ footer {
 <body>
 
 <header>
-  <h1>
-    <a href="index.html">Josefina & Santiago</a>
-  </h1>
-
-  <p style="margin-top:10px; letter-spacing:2px;">
-    SAVE THE DATE — 23 · Octubre · 2026
-  </p>
-  
-<div style="margin-top:25px;">
-  <a href="novios.html" style="text-decoration:none;">
-    <span style="
-      display:inline-block;
-      padding: 12px 24px;
-      border: 1px solid #3e3e3e;
-      color: #3e3e3e;
-      font-size: 13px;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-    "
-    onmouseover="this.style.backgroundColor='#3e3e3e'; this.style.color='white'"
-    onmouseout="this.style.backgroundColor='transparent'; this.style.color='#3e3e3e'">
-      Conoce a los novios
-    </span>
-  </a>
-</div>
-  
+  <h1>Josefina & Santiago</h1>
+  <div class="subtitle">23 · Octubre · 2026</div>
   <div class="countdown" id="countdown"></div>
+
+  <div style="margin-top:30px;">
+    <a href="novios.html" class="button">Conoce a los novios</a>
+  </div>
 </header>
 
-<section>
-  <h2>Agradecimiento</h2>
+<div class="container">
 
-  <p>
-    Queremos agradecer sinceramente a todos quienes nos acompañaron el 21 de marzo de este año.
-    Su presencia, cariño y energía hicieron de esa celebración algo que recordaremos para siempre.
-  </p>
+  <div class="section">
+    <h2>Agradecimiento</h2>
+    <p>
+      Queremos agradecer sinceramente a todos quienes nos acompañaron el 21 de marzo.
+      Su presencia hizo de ese día algo que recordaremos siempre.
+    </p>
+    <img src="juntos2.JPG">
+  </div>
 
-  <img src="juntos2.JPG" alt="Josefina y Santiago">
+  <div class="divider"></div>
 
-</section>
+  <div class="section">
+    <h2>Próximo encuentro</h2>
+    <p>
+      El 23 de octubre de 2026 celebraremos nuestra ceremonia religiosa en Casona Johnson.
+    </p>
+    <a href="save-the-date.html" class="button">Ver Save the Date</a>
+  </div>
 
-<section>
-  <h2>Revive y comparte</h2>
+  <div class="divider"></div>
 
-  <p>
-    Si tienes fotos o registros del evento, nos encantaría poder recibirlos y revivir juntos ese día.
-  </p>
-
-  <div style="text-align:center; margin-top:20px;">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8QcaYEyEnGMtGyPe3E7HVTTGjsc9m4uN-35xyOPVGA28G-A/viewform" target="_blank">
-      <button>Compartir recuerdos</button>
+  <div class="section">
+    <h2>Compartir recuerdos</h2>
+    <p>Si tienes fotos del evento, nos encantaría recibirlas.</p>
+    <a href="https://docs.google.com/forms/..." target="_blank" class="button">
+      Subir fotos
     </a>
   </div>
-</section>
 
-<section>
-  <h2>Información adicional</h2>
+  <div class="divider"></div>
 
-  <p>
-    Para quienes lo han consultado, hemos dejado disponible un registro de referencia.
-  </p>
-
-  <p style="margin-top:20px;">
-    Código Novios Falabella: <strong>2103202</strong>
-  </p>
-</section>
-
-<section>
-  <h2>Próximo encuentro</h2>
-
-  <p>
-    El 23 de octubre de 2026 celebraremos nuestra ceremonia religiosa en Casona Johnson.
-    Más información será compartida próximamente.
-  </p>
-</section>
-
-<section>
-  <h2>Ubicación del Próximo evento</h2>
-
-  <p>Punto de encuentro y coordinación.</p>
-
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3521.1916449719592!2d-70.68389342411984!3d-33.198065773490455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662bba5f5d1e749%3A0x4a8b92aca9620a00!2sCasona%20Reina%20Sur%20Juan%20Pablo%20Johnson!5e1!3m2!1ses-419!2scl!4v1774296077616!5m2!1ses-419!2scl"
-    width="100%" 
-    height="400" 
-    style="border:0; border-radius:8px;" 
-    allowfullscreen="" 
-    loading="lazy">
-  </iframe>
-</section>
-
-<section>
-  <h2>Producción</h2>
-
-  <div class="team">
-    <img src="kiki.jpeg" alt="Kiki">
-
-    <div>
-      <p><strong>Kiki, Princess Killer Juanita III</strong></p>
-      <p>Directora Creativa</p>
-
-      <p style="font-size: 14px; color: #7a746d;">
-        Especializada en coordinación instintiva, supervisión territorial y toma de decisiones no verbal.
-      </p>
-    </div>
+  <div class="section">
+    <h2>Referencia</h2>
+    <p>Código Novios Falabella: <strong>2103202</strong></p>
   </div>
 
-  <p style="font-size: 12px; color: #9a948d; margin-top: 20px;">
-    All operations are subject to environmental and behavioral conditions.
-  </p>
-</section>
+  <div class="divider"></div>
 
-<footer>
-  © Josefina & Santiago<br>
-  <a href="mailto:info@kiki.cl" style="color:#9a948d; text-decoration:none;">
-    info@kiki.cl
-  </a>
-</footer>
+  <div class="section">
+    <h2>Ubicación</h2>
+    <iframe src="https://www.google.com/maps/embed?..." width="100%" height="400" style="border:0; border-radius:6px;"></iframe>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <h2>Producción</h2>
+    <img src="kiki.jpeg" style="max-width:200px;">
+    <p><strong>Kiki</strong><br>Event Direction</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  info@kiki.cl
+</div>
 
 <script>
 const countdown = document.getElementById("countdown");
@@ -214,17 +179,10 @@ setInterval(() => {
   const now = new Date().getTime();
   const distance = eventDate - now;
 
-  if (distance <= 0) {
-    countdown.innerHTML = "UNA HISTORIA PARA SIEMPRE";
-    countdown.style.fontSize = "32px";
-    countdown.style.fontWeight = "bold";
-    return;
-  }
-
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
 
-  countdown.innerHTML = `Faltan ${days} días y ${hours} horas`;
+  countdown.innerHTML = `${days} días · ${hours} hrs`;
 }, 1000);
 </script>
 
