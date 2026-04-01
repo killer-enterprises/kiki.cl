@@ -56,6 +56,10 @@ body::before {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50%       { transform: translateY(-8px) rotate(3deg); }
 }
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(1.04); }
+  to   { opacity: 1; transform: scale(1); }
+}
 
 .reveal {
   opacity: 0;
@@ -63,6 +67,13 @@ body::before {
   transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 1.1s cubic-bezier(0.22,1,0.36,1), transform 1.1s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
 
 /* ─── HERO ────────────────────────────────────────────────── */
 .hero {
@@ -145,7 +156,6 @@ body::before {
   animation-delay: 1.4s;
 }
 
-/* botanical hero decorations */
 .hero-bot-tl {
   position: absolute;
   top: -20px; left: -30px;
@@ -224,6 +234,70 @@ body::before {
   color: var(--muted);
   margin-top: 12px;
   font-family: 'Jost', sans-serif;
+}
+
+/* ─── PHOTO FULL BLEED ────────────────────────────────────── */
+.photo-section {
+  position: relative;
+  height: 90vh;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.photo-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  filter: brightness(0.82) saturate(0.85);
+  transition: transform 8s cubic-bezier(0.22,1,0.36,1);
+  transform: scale(1.05);
+}
+
+.photo-section.visible img {
+  transform: scale(1);
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(31,30,27,0.08) 0%,
+    rgba(31,30,27,0.0) 40%,
+    rgba(31,30,27,0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--cream);
+  width: 100%;
+  padding: 0 24px;
+}
+
+.photo-caption-date {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(246,242,235,0.55);
+  margin-bottom: 10px;
+}
+
+.photo-caption-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.3;
+  color: rgba(246,242,235,0.92);
 }
 
 /* ─── COUNTDOWN ───────────────────────────────────────────── */
@@ -352,6 +426,103 @@ body::before {
   font-weight: 400;
   line-height: 1.3;
 }
+
+/* ─── NOVIOS CTA ──────────────────────────────────────────── */
+.novios-section {
+  padding: 0 24px 130px;
+  background: var(--parch);
+  position: relative;
+  overflow: hidden;
+}
+
+.novios-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.novios-photo-col {
+  position: relative;
+  overflow: hidden;
+  min-height: 460px;
+}
+
+.novios-photo-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  filter: brightness(0.88) saturate(0.8);
+  transition: transform 6s cubic-bezier(0.22,1,0.36,1);
+  transform: scale(1.04);
+}
+
+.novios-photo-col.visible img,
+.novios-section .reveal.visible ~ .novios-photo-col img {
+  transform: scale(1);
+}
+
+.novios-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 60px;
+  border-left: 1px solid var(--line);
+}
+
+.novios-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 28px;
+}
+
+.novios-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+.novios-heading em {
+  display: block;
+  font-style: italic;
+  color: var(--sage);
+}
+
+.novios-body {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 40px;
+  max-width: 340px;
+}
+
+.novios-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 6px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.novios-link:hover { color: var(--sage); border-color: var(--sage); }
+.novios-link svg { transition: transform 0.3s; }
+.novios-link:hover svg { transform: translateX(4px); }
 
 /* ─── LOCATION ────────────────────────────────────────────── */
 .location-section {
@@ -521,7 +692,6 @@ body::before {
 }
 .share-btn:hover { background: var(--gold); color: var(--ink); }
 
-/* kiki silhouette */
 .kiki-wm {
   position: absolute;
   bottom: 0; right: 24px;
@@ -590,6 +760,10 @@ footer {
   .countdown-unit { padding: 0 18px; }
   .info-item { min-width: 140px; }
   .stamp { padding: 36px 28px; }
+  .novios-inner { grid-template-columns: 1fr; }
+  .novios-photo-col { min-height: 300px; }
+  .novios-text-col { padding: 44px 28px; border-left: none; border-top: 1px solid var(--line); }
+  .photo-section { height: 70vh; }
 }
 </style>
 </head>
@@ -598,7 +772,6 @@ footer {
 <!-- ════ HERO ════════════════════════════════════════════════ -->
 <section class="hero">
 
-  <!-- botanical decorations (inline SVG, no external files needed) -->
   <svg class="hero-bot-tl" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="#6b7a65" stroke-width="1">
       <path d="M150 380 C150 380 120 300 80 240 C60 210 40 180 50 140 C60 100 100 90 130 110 C150 123 160 150 150 380Z"/>
@@ -649,6 +822,16 @@ footer {
   </div>
 </section>
 
+<!-- ════ PHOTO — FULL BLEED ══════════════════════════════════ -->
+<section class="photo-section" id="photo-hero">
+  <img src="juntos2.JPG" alt="Josefina y Santiago">
+  <div class="photo-overlay"></div>
+  <div class="photo-caption">
+    <div class="photo-caption-date">21 · Marzo · 2026</div>
+    <div class="photo-caption-text">El capítulo que antecede<br>a todo lo que viene.</div>
+  </div>
+</section>
+
 <!-- ════ COUNTDOWN ═══════════════════════════════════════════ -->
 <section class="countdown-section">
   <svg class="countdown-wm" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
@@ -683,7 +866,6 @@ footer {
 
 <!-- ════ CEREMONY INFO ═══════════════════════════════════════ -->
 <section class="info-section">
-  <!-- small botanical accent -->
   <svg style="position:absolute;top:0;right:0;width:200px;opacity:0.06;pointer-events:none;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="#6b7a65" stroke-width="1">
       <path d="M180 0 C180 0 140 60 100 80 C70 95 30 90 20 120 C10 150 40 170 70 160 C95 152 110 130 180 0Z"/>
@@ -726,6 +908,35 @@ footer {
   </div>
 </section>
 
+<!-- ════ NOVIOS CTA ══════════════════════════════════════════ -->
+<section class="novios-section">
+  <div class="novios-inner">
+
+    <div class="novios-photo-col" id="novios-photo">
+      <img src="juntos.jpeg" alt="Josefina y Santiago">
+    </div>
+
+    <div class="novios-text-col reveal">
+      <div class="novios-eyebrow">Quiénes somos</div>
+      <h2 class="novios-heading">
+        Josefina<br>
+        <em>&amp; Santiago</em>
+      </h2>
+      <p class="novios-body">
+        Una enfermera con altura de Hollywood y un abogado que habla con perros.
+        Una historia que comenzó con un helado nunca cobrado y sigue siendo escrita.
+      </p>
+      <a href="novios.html" class="novios-link">
+        Conoce la historia
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 5h14M11 1l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
 <!-- ════ LOCATION ════════════════════════════════════════════ -->
 <section class="location-section">
   <div class="location-inner">
@@ -760,7 +971,6 @@ footer {
 
 <!-- ════ MESSAGE ═════════════════════════════════════════════ -->
 <section class="message-section">
-  <!-- botanical side decorations -->
   <svg class="msg-bot-l" viewBox="0 0 320 500" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="#6b7a65" stroke-width="0.8">
       <path d="M160 480 C160 480 120 370 70 290 C40 245 10 200 25 150 C40 100 90 85 130 110 C155 125 165 165 160 480Z"/>
@@ -793,7 +1003,6 @@ footer {
 
 <!-- ════ SHARE / CTA ═════════════════════════════════════════ -->
 <section class="share-section">
-  <!-- kiki chihuahua silhouette watermark -->
   <svg class="kiki-wm" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
     <g fill="#f6f2eb">
       <ellipse cx="80" cy="140" rx="42" ry="35"/>
@@ -846,7 +1055,6 @@ function pad(n) { return String(n).padStart(2,'0'); }
 function tick() {
   const target = new Date('2026-10-23T12:00:00').getTime();
   const diff   = target - Date.now();
-
   if (diff <= 0) {
     ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
       document.getElementById(id).textContent = '00';
@@ -861,7 +1069,7 @@ function tick() {
 tick();
 setInterval(tick, 1000);
 
-/* ── Scroll reveal ── */
+/* ── Scroll reveal + photo scale ── */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -872,6 +1080,24 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* Photo hero parallax-scale on scroll */
+const photoSection = document.getElementById('photo-hero');
+const noviosPhoto  = document.getElementById('novios-photo');
+
+const imgObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      /* also trigger img scale */
+      const img = e.target.querySelector('img');
+      if (img) img.style.transform = 'scale(1)';
+      imgObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+[photoSection, noviosPhoto].forEach(el => { if (el) imgObs.observe(el); });
 </script>
 </body>
 </html>
