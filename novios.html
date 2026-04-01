@@ -100,49 +100,42 @@ body::before {
   display: block;
   font-family: 'Jost', sans-serif;
   font-weight: 200;
-  font-size: 11px;
-  letter-spacing: 4px;
+  font-size: 10px;
+  letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--sage);
   animation: fadeIn 1.2s ease both;
   animation-delay: 0.2s;
+  margin-bottom: 36px;
 }
 
-.hero-names {
+/* editorial headline — the protagonist of this hero */
+.hero-headline {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(58px, 12vw, 110px);
-  line-height: 0.92;
+  font-size: clamp(52px, 10vw, 96px);
+  line-height: 0.95;
   letter-spacing: -1px;
-  margin: 24px 0 10px;
+  color: var(--ink);
   animation: fadeUp 1.2s cubic-bezier(0.22,1,0.36,1) both;
-  animation-delay: 0.4s;
+  animation-delay: 0.35s;
 }
-
-.hero-names em {
+.hero-headline em {
   display: block;
   font-style: italic;
   color: var(--sage);
 }
 
-.hero-ampersand {
-  display: block;
-  font-size: clamp(30px, 6vw, 52px);
-  color: var(--gold);
-  font-weight: 300;
-  letter-spacing: 8px;
-  margin: 4px 0;
-}
-
-.hero-sub {
+.hero-names {
   font-family: 'Jost', sans-serif;
   font-weight: 200;
-  font-size: 13px;
+  font-size: clamp(11px, 1.5vw, 13px);
   letter-spacing: 5px;
+  text-transform: uppercase;
   color: var(--muted);
-  margin-top: 30px;
+  margin: 28px 0 0;
   animation: fadeIn 1.4s ease both;
-  animation-delay: 0.8s;
+  animation-delay: 0.7s;
 }
 
 .hero-rule {
@@ -213,7 +206,6 @@ body::before {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 80vh;
-  max-height: 860px;
 }
 
 .profile-grid.reverse { direction: rtl; }
@@ -254,10 +246,10 @@ body::before {
   background: var(--cream);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 72px 64px;
+  justify-content: flex-start;
+  padding: 80px 64px 80px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* botanical accent inside profile */
@@ -360,6 +352,36 @@ body::before {
   flex-shrink: 0;
   margin-top: 8px;
   opacity: 0.7;
+}
+
+/* social links */
+.profile-social {
+  display: flex;
+  gap: 20px;
+  margin-top: 28px;
+  align-items: center;
+}
+
+.profile-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.profile-social a:hover { color: var(--sage); }
+.profile-social a svg { opacity: 0.6; transition: opacity 0.3s; }
+.profile-social a:hover svg { opacity: 1; }
+
+.social-sep {
+  width: 1px;
+  height: 12px;
+  background: var(--line);
 }
 
 /* subtle note at bottom of Santiago */
@@ -865,13 +887,11 @@ footer {
   </svg>
 
   <div>
-    <span class="hero-eyebrow">Los Novios</span>
-    <div class="hero-names">
-      <span>Josefina</span>
-      <span class="hero-ampersand">&</span>
-      <em>Santiago</em>
+    <span class="hero-eyebrow">kiki.cl · Archivo personal</span>
+    <div class="hero-headline">
+      Una historia<br><em>en dos voces</em>
     </div>
-    <div class="hero-sub">Perfil · Historia · Día a día</div>
+    <div class="hero-names">Josefina &nbsp;·&nbsp; Santiago</div>
     <div class="hero-rule"></div>
     <div class="hero-scroll-hint">Continúa ↓</div>
   </div>
@@ -923,6 +943,26 @@ footer {
           <li><span class="fact-dot"></span>Hermana de Trinidad Gallardo, aunque pocos lo crean posible</li>
           <li><span class="fact-dot"></span>Participa activamente en bailes trending de TikTok en su hogar</li>
         </ul>
+        <div class="profile-social">
+          <a href="https://www.instagram.com/josefinajgo/" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+          <span class="social-sep"></span>
+          <a href="https://www.linkedin.com/in/jjgallardoo/" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="3"/>
+              <line x1="8" y1="11" x2="8" y2="16"/>
+              <line x1="8" y1="8" x2="8" y2="8.5"/>
+              <path d="M12 11v5M12 14a3 3 0 0 1 6 0v2"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
       </div>
     </div>
 
@@ -986,6 +1026,26 @@ footer {
           <li><span class="fact-dot"></span>Declara tener capacidad de comunicación con caninos</li>
           <li><span class="fact-dot"></span>Superó una aversión prolongada al tomate bajo supervisión de Josefina</li>
         </ul>
+        <div class="profile-social">
+          <a href="https://www.instagram.com/romerors/" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+          <span class="social-sep"></span>
+          <a href="https://www.linkedin.com/in/santiagoromeroweibel/" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="3"/>
+              <line x1="8" y1="11" x2="8" y2="16"/>
+              <line x1="8" y1="8" x2="8" y2="8.5"/>
+              <path d="M12 11v5M12 14a3 3 0 0 1 6 0v2"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
         <p class="profile-note reveal delay-4">
           Ha desarrollado con Kiki un vínculo muy cercano, marcado por la constancia,
           el cuidado y la vida cotidiana compartida. Sin embargo, en el día a día,
@@ -1217,11 +1277,11 @@ footer {
     <a href="novios.html">Los novios</a>
   </div>
   <div class="footer-hr"></div>
-  <div class="footer-credit">info@kiki.cl &nbsp;·&nbsp; Producción: Kiki, Princess Killer Juanita III</div>
+  <div class="footer-credit"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a2cbccc4cde2c9cbc9cb8cc1ce">[email&#160;protected]</a> &nbsp;·&nbsp; Producción: Kiki, Princess Killer Juanita III</div>
 </footer>
 
 <!-- ════ SCRIPTS ═════════════════════════════════════════════ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── Scroll reveal ── */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -1242,16 +1302,4 @@ const imgObs = new IntersectionObserver(entries => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
       const img = e.target.querySelector('img');
-      if (img) img.style.transform = 'scale(1)';
-      imgObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
-
-photoIds.forEach(id => {
-  const el = document.getElementById(id);
-  if (el) imgObs.observe(el);
-});
-</script>
-</body>
-</html>
+      if (img) img.style.
