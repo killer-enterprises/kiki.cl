@@ -255,9 +255,7 @@ body::before {
   transform: scale(1.05);
 }
 
-.photo-section.visible img {
-  transform: scale(1);
-}
+.photo-section.visible img { transform: scale(1); }
 
 .photo-overlay {
   position: absolute;
@@ -436,7 +434,6 @@ body::before {
   overflow: hidden;
 }
 
-/* hairline top & bottom */
 .rsvp-section::before,
 .rsvp-section::after {
   content: '';
@@ -450,7 +447,6 @@ body::before {
 .rsvp-section::before { top: 0; }
 .rsvp-section::after  { bottom: 0; }
 
-/* botanical accent */
 .rsvp-bot {
   position: absolute;
   top: 50%; right: -60px;
@@ -514,10 +510,7 @@ body::before {
   padding: 17px 40px;
   transition: background 0.35s, color 0.35s;
 }
-.rsvp-btn:hover {
-  background: var(--sage);
-  color: var(--cream);
-}
+.rsvp-btn:hover { background: var(--sage); color: var(--cream); }
 .rsvp-btn svg { transition: transform 0.3s; flex-shrink: 0; }
 .rsvp-btn:hover svg { transform: translateX(4px); }
 
@@ -634,9 +627,7 @@ body::before {
   align-items: center;
 }
 
-.location-text .section-eyebrow {
-  margin-bottom: 28px;
-}
+.location-text .section-eyebrow { margin-bottom: 28px; }
 
 .location-heading {
   font-family: 'Cormorant Garamond', serif;
@@ -745,6 +736,122 @@ body::before {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+/* ─── GIFTS SECTION ───────────────────────────────────────── */
+.gifts-section {
+  background: var(--parch);
+  padding: 90px 24px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* subtle corner ornament top-left */
+.gifts-corner-tl {
+  position: absolute;
+  top: 32px; left: 32px;
+  width: 44px;
+  height: 44px;
+  border-top: 1px solid var(--gold);
+  border-left: 1px solid var(--gold);
+  opacity: 0.4;
+  pointer-events: none;
+}
+.gifts-corner-br {
+  position: absolute;
+  bottom: 32px; right: 32px;
+  width: 44px;
+  height: 44px;
+  border-bottom: 1px solid var(--gold);
+  border-right: 1px solid var(--gold);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.gifts-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gifts-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--sage);
+  display: block;
+  margin-bottom: 22px;
+}
+
+.gifts-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.gifts-heading em {
+  font-style: italic;
+  color: var(--sage);
+}
+
+.gifts-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 44px;
+}
+
+/* two info cards side by side */
+.gifts-cards {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  border: 1px solid var(--line);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.gifts-card {
+  flex: 1;
+  padding: 30px 32px;
+  border-right: 1px solid var(--line);
+  text-align: left;
+}
+.gifts-card:last-child { border-right: none; }
+
+.gifts-card-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.gifts-card-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.gifts-card-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--muted);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
 }
 
 /* ─── SHARE ───────────────────────────────────────────────── */
@@ -859,6 +966,11 @@ footer {
   .novios-text-col { padding: 44px 28px; border-left: none; border-top: 1px solid var(--line); }
   .photo-section { height: 70vh; }
   .rsvp-btn { padding: 15px 28px; }
+  .gifts-cards { flex-direction: column; }
+  .gifts-card { border-right: none; border-bottom: 1px solid var(--line); }
+  .gifts-card:last-child { border-bottom: none; }
+  .gifts-corner-tl,
+  .gifts-corner-br { display: none; }
 }
 </style>
 </head>
@@ -1006,7 +1118,6 @@ footer {
 <!-- ════ RSVP ════════════════════════════════════════════════ -->
 <section class="rsvp-section">
 
-  <!-- botanical right accent -->
   <svg class="rsvp-bot" viewBox="0 0 260 400" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="#6b7a65" stroke-width="0.9">
       <path d="M130 390 C130 390 100 310 60 250 C38 218 15 185 28 148 C41 111 82 102 112 122 C130 135 136 168 130 390Z"/>
@@ -1127,6 +1238,35 @@ footer {
     </p>
     <div class="message-hr"></div>
     <div class="message-sig">Josefina &amp; Santiago</div>
+  </div>
+</section>
+
+<!-- ════ GIFTS ════════════════════════════════════════════════ -->
+<section class="gifts-section">
+  <div class="gifts-corner-tl"></div>
+  <div class="gifts-corner-br"></div>
+
+  <div class="gifts-inner reveal">
+    <span class="gifts-eyebrow">Información adicional</span>
+    <h2 class="gifts-heading">
+      Si deseas hacernos<br>un <em>regalo</em>
+    </h2>
+    <p class="gifts-note">
+      Tu presencia ya es suficiente. Pero si quieres sumarte con algo, aquí tienes los datos.
+    </p>
+
+    <div class="gifts-cards">
+      <div class="gifts-card">
+        <span class="gifts-card-label">Domicilio</span>
+        <div class="gifts-card-value">Alsasua 934<br>Depto 803</div>
+        <div class="gifts-card-sub">Las Condes · Santiago de Chile</div>
+      </div>
+      <div class="gifts-card">
+        <span class="gifts-card-label">Lista de novios</span>
+        <div class="gifts-card-value">Novios Falabella</div>
+        <div class="gifts-card-sub">Código Nº 2103202</div>
+      </div>
+    </div>
   </div>
 </section>
 
