@@ -481,10 +481,7 @@ body::before {
   color: var(--ink);
   margin-bottom: 18px;
 }
-.rsvp-heading em {
-  font-style: italic;
-  color: var(--sage);
-}
+.rsvp-heading em { font-style: italic; color: var(--sage); }
 
 .rsvp-sub {
   font-family: 'Jost', sans-serif;
@@ -747,7 +744,6 @@ body::before {
   text-align: center;
 }
 
-/* subtle corner ornament top-left */
 .gifts-corner-tl {
   position: absolute;
   top: 32px; left: 32px;
@@ -793,10 +789,7 @@ body::before {
   color: var(--ink);
   margin-bottom: 14px;
 }
-.gifts-heading em {
-  font-style: italic;
-  color: var(--sage);
-}
+.gifts-heading em { font-style: italic; color: var(--sage); }
 
 .gifts-note {
   font-family: 'Cormorant Garamond', serif;
@@ -808,7 +801,6 @@ body::before {
   margin-bottom: 44px;
 }
 
-/* two info cards side by side */
 .gifts-cards {
   display: flex;
   gap: 0;
@@ -853,6 +845,26 @@ body::before {
   letter-spacing: 0.3px;
   line-height: 1.6;
 }
+
+/* registry link inside gifts card */
+.gifts-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sage);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
+  margin-top: 14px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.gifts-card-link:hover { color: var(--ink); border-color: var(--ink); }
+.gifts-card-link svg { transition: transform 0.3s; flex-shrink: 0; }
+.gifts-card-link:hover svg { transform: translateX(3px); }
 
 /* ─── SHARE ───────────────────────────────────────────────── */
 .share-section {
@@ -1252,7 +1264,7 @@ footer {
       Si deseas hacernos<br>un <em>regalo</em>
     </h2>
     <p class="gifts-note">
-      Aquí tienes los datos.
+      Tu presencia ya es suficiente. Pero si quieres sumarte con algo, aquí tienes los datos.
     </p>
 
     <div class="gifts-cards">
@@ -1265,6 +1277,15 @@ footer {
         <span class="gifts-card-label">Lista de novios</span>
         <div class="gifts-card-value">Novios Falabella</div>
         <div class="gifts-card-sub">Código Nº 2103202</div>
+        <a href="https://novios.falabella.com/info-evento/evento?codigoEvento=2103202"
+           target="_blank"
+           rel="noopener"
+           class="gifts-card-link">
+          Ver lista
+          <svg width="13" height="9" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 5h14M11 1l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
