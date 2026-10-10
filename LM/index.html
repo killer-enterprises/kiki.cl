@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Luna de Miel · Josefina &amp; Santiago</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+<style>
+/* ─── TOKENS ──────────────────────────────────────────────── */
+:root {
+  --ink:   #1f1e1b;
+  --cream: #f6f2eb;
+  --parch: #ede7da;
+  --sage:  #6b7a65;
+  --gold:  #b89c6e;
+  --muted: #8a8378;
+  --line:  rgba(107,122,101,0.25);
+  --alert: #9c5b3c;
+  color-scheme: light only;
+}
+
+/* ─── RESET ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ─── GRAIN OVERLAY ───────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.6;
+}
+
+/* ─── ANIMATIONS ──────────────────────────────────────────── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation: none !important; }
+}
+
+/* ─── LAYOUT ──────────────────────────────────────────────── */
+.wrap { max-width: 44rem; margin-inline: auto; padding-inline: 24px; }
+
+/* ─── HERO ────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 92px 24px 54px;
+}
+
+.hero-nav-back {
+  position: absolute;
+  top: 36px; left: 36px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 1s ease both;
+  animation-delay: 0.3s;
+  transition: color 0.3s;
+}
+.hero-nav-back:hover { color: var(--sage); }
+.hero-nav-back svg { transition: transform 0.3s; }
+.hero-nav-back:hover svg { transform: translateX(-3px); }
+
+@media (max-width: 560px) {
+  .hero { padding-top: 76px; }
+  .hero-nav-back { top: 24px; left: 24px; }
+}
+
+.hero-eyebrow {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--sage);
+  animation: fadeIn 1.2s ease both;
+  animation-delay: 0.2s;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2.5rem, 11vw, 4.1rem);
+  line-height: 1.02;
+  margin-top: 18px;
+  animation: fadeUp 1.4s cubic-bezier(0.22,1,0.36,1) both;
+  animation-delay: 0.35s;
+  text-wrap: balance;
+}
+.hero h1 .amp {
+  display: block;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 0.6em;
+  margin: 2px 0;
+}
+
+.hero-dates {
+  margin-top: 22px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sage);
+  animation: fadeIn 1.4s ease both;
+  animation-delay: 0.6s;
+}
+
+.hero-rule {
+  width: 48px; height: 1px;
+  background: var(--gold);
+  margin: 30px auto 0;
+  border: 0;
+  animation: fadeIn 1.6s ease both;
+  animation-delay: 0.8s;
+}
+
+/* ─── SECCIONES ───────────────────────────────────────────── */
+section.block {
+  padding-block: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.sec-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.8rem, 7vw, 2.6rem);
+  line-height: 1.08;
+  margin: 10px 0 6px;
+  text-wrap: balance;
+}
+h2 + .sub { color: var(--muted); font-size: 13.5px; margin-bottom: 26px; max-width: 62ch; }
+
+h3 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin: 34px 0 14px;
+}
+
+p { margin-bottom: 14px; max-width: 62ch; }
+a { color: var(--ink); }
+strong { font-weight: 400; }
+em { font-style: italic; }
+
+/* ─── RESUMEN ─────────────────────────────────────────────── */
+.glance {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.glance > div { background: var(--parch); padding: 20px 14px; text-align: center; min-width: 0; }
+.glance .city { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; line-height: 1.15; }
+.glance .n {
+  display: block;
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 9px;
+}
+@media (max-width: 440px) {
+  .glance { grid-template-columns: 1fr; }
+  .glance > div { display: flex; align-items: baseline; justify-content: space-between; text-align: left; padding: 14px 18px; }
+  .glance .n { margin-top: 0; text-align: right; }
+}
+
+/* ─── TABLAS ──────────────────────────────────────────────── */
+.scroll { overflow-x: auto; margin-bottom: 18px; border: 1px solid var(--line); -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 13.5px; }
+th, td { text-align: left; padding: 11px 13px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+th {
+  font-weight: 400;
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--parch);
+  white-space: nowrap;
+}
+td.ref { font-variant-numeric: tabular-nums; letter-spacing: 1px; white-space: nowrap; }
+.mono { font-variant-numeric: tabular-nums; }
+.dim { color: var(--muted); }
+
+/* ─── FICHAS ──────────────────────────────────────────────── */
+.card { background: var(--parch); padding: 22px 24px; margin-bottom: 16px; }
+.card .kicker { font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.card .name { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.15; margin-bottom: 3px; max-width: none; }
+.card .addr { color: var(--muted); font-size: 13px; margin-bottom: 16px; max-width: none; }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; font-size: 13.5px; }
+.facts dt { color: var(--muted); white-space: nowrap; }
+.facts dd { font-variant-numeric: tabular-nums; }
+@media (max-width: 400px) {
+  .facts { grid-template-columns: 1fr; gap: 0; }
+  .facts dt { margin-top: 9px; }
+}
+
+/* ─── DÍAS ────────────────────────────────────────────────── */
+.days { display: flex; flex-direction: column; margin-bottom: 8px; }
+.day { display: grid; grid-template-columns: 4.8rem 1fr; gap: 18px; padding: 15px 0; border-top: 1px solid var(--line); }
+.day:first-child { border-top: none; }
+.day .when { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; line-height: 1.25; color: var(--sage); }
+.day .when span {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.day .what { min-width: 0; font-size: 14.5px; }
+.day .what b { font-weight: 400; display: block; margin-bottom: 3px; }
+@media (max-width: 440px) {
+  .day { grid-template-columns: 1fr; gap: 6px; }
+  .day .when { font-size: 1rem; }
+  .day .when span { display: inline; margin-left: 9px; }
+}
+
+/* ─── IDEAS ───────────────────────────────────────────────── */
+.ideas { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 26px; }
+.ideas > div { min-width: 0; }
+.ideas h4 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 9.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.ideas ul { list-style: none; font-size: 14px; }
+.ideas li { padding: 5px 0; border-bottom: 1px solid var(--line); }
+.ideas li:last-child { border-bottom: none; }
+.ideas li em { font-style: normal; color: var(--muted); display: block; font-size: 12.5px; }
+
+/* ─── NOTAS ───────────────────────────────────────────────── */
+.note { border-left: 1px solid var(--gold); padding: 3px 0 3px 18px; margin-bottom: 18px; font-size: 14px; max-width: 62ch; }
+.note.warn { border-left-color: var(--alert); }
+.note .t { display: block; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+
+/* ─── CHECKLIST ───────────────────────────────────────────── */
+.todo { list-style: none; }
+.todo li { display: grid; grid-template-columns: auto 1fr; gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 14.5px; align-items: start; }
+.todo li:first-child { border-top: none; }
+.todo .box { width: 11px; height: 11px; border: 1px solid var(--gold); margin-top: 6px; }
+.todo em { font-style: normal; color: var(--muted); display: block; font-size: 13px; }
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+footer { padding: 50px 24px 36px; text-align: center; background: var(--parch); margin-top: 40px; }
+.footer-names { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; letter-spacing: 1px; margin-bottom: 10px; }
+.footer-sub { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 30px; }
+.footer-nav { display: flex; gap: 28px; justify-content: center; margin-bottom: 36px; flex-wrap: wrap; }
+.footer-nav a { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.footer-nav a:hover { color: var(--sage); }
+.footer-hr { width: 40px; height: 1px; background: var(--line); margin: 0 auto 20px; }
+.footer-credit { font-size: 10px; color: rgba(31,30,27,0.3); letter-spacing: 1px; }
+
+:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
+
+/* ─── IMPRESIÓN ───────────────────────────────────────────── */
+@media print {
+  body::before, .hero-nav-back { display: none; }
+  html, body { background: #fff; }
+  body { font-size: 11pt; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .wrap { max-width: none; padding-inline: 0; }
+  .card, .note, .day, .glance { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  .scroll { overflow: visible; }
+  table { min-width: 0; }
+  footer { background: none; }
+  a { text-decoration: none; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <a href="/" class="hero-nav-back">
+    <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+      <path d="M13 4.5H1M5 1L1 4.5 5 8" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Volver
+  </a>
+
+  <span class="hero-eyebrow">Luna de miel</span>
+  <h1>Josefina<span class="amp">&amp;</span>Santiago</h1>
+  <div class="hero-dates">25 de octubre — 15 de noviembre 2026</div>
+  <hr class="hero-rule">
+</section>
+
+<div class="wrap">
+<main>
+
+  <section class="block reveal" style="border-top:none" aria-labelledby="h-resumen">
+    <div class="sec-label">El viaje en una mirada</div>
+    <h2 id="h-resumen">Tres ciudades, veintiún días</h2>
+    <p class="sub">Seis noches en Manhattan, ocho en una isla de las Yasawa, tres frente al Pacífico.</p>
+    <div class="glance">
+      <div><span class="city">Nueva York</span><span class="n">26 oct – 1 nov · 6 noches</span></div>
+      <div><span class="city">Fiji</span><span class="n">3 – 11 nov · 8 noches</span></div>
+      <div><span class="city">Los Ángeles</span><span class="n">11 – 14 nov · 3 noches</span></div>
+    </div>
+    <div class="note" style="margin-top:24px">
+      <span class="t">El día que no existe</span>
+      Salimos de Nueva York el domingo 1 de noviembre y llegamos a Nadi el martes 3. El lunes 2 se lo come la línea internacional de cambio de fecha.
+    </div>
+  </section>
+
+  <section class="block reveal" id="vuelos" aria-labelledby="h-vuelos">
+    <div class="sec-label">Aéreo</div>
+    <h2 id="h-vuelos">Los cinco tramos</h2>
+    <p class="sub">Todo comprado y confirmado.</p>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Tramo</th><th scope="col">Vuelo</th><th scope="col">Sale</th><th scope="col">Llega</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Santiago → Nueva York</td><td>LATAM <strong>LA532</strong></td>
+            <td class="mono">dom 25 oct · 22:55<br><span class="dim">SCL</span></td>
+            <td class="mono">lun 26 oct · 09:30<br><span class="dim">JFK</span></td>
+          </tr>
+          <tr>
+            <td>Nueva York → Los Ángeles</td><td>Fiji Airways <strong>FJ 5001</strong><br><span class="dim">operado por American</span></td>
+            <td class="mono">dom 1 nov · 16:30<br><span class="dim">JFK Terminal 8</span></td>
+            <td class="mono">dom 1 nov · 19:45<br><span class="dim">LAX</span></td>
+          </tr>
+          <tr>
+            <td>Los Ángeles → Nadi</td><td>Fiji Airways <strong>FJ 0811</strong></td>
+            <td class="mono">dom 1 nov · 22:35<br><span class="dim">LAX · Tom Bradley</span></td>
+            <td class="mono">mar 3 nov · 06:00<br><span class="dim">NAN</span></td>
+          </tr>
+          <tr>
+            <td>Nadi → Los Ángeles</td><td>Fiji Airways <strong>FJ 810</strong></td>
+            <td class="mono">mié 11 nov · 21:40<br><span class="dim">NAN</span></td>
+            <td class="mono">mié 11 nov · 12:00<br><span class="dim">LAX</span></td>
+          </tr>
+          <tr>
+            <td>Los Ángeles → Santiago</td><td>LATAM <strong>LA603</strong></td>
+            <td class="mono">sáb 14 nov · 14:55<br><span class="dim">LAX</span></td>
+            <td class="mono">dom 15 nov · 05:35<br><span class="dim">SCL</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note warn">
+      <span class="t">La conexión del 1 de noviembre en LAX</span>
+      Dos horas cincuenta, y con cambio de terminal: American llega a la T4 o T5 y Fiji sale de Tom Bradley. Alcanza bien, pero no da para pasear. Vamos en un solo billete, así que las maletas se facturan directo a Nadi y si American se atrasa, Fiji nos reprotege.
+    </div>
+    <div class="note">
+      <span class="t">Check-in Fiji Airways</span>
+      Se abre el 31 de octubre, directo en el sitio de Fiji Airways con el PNR <strong>84J7UI</strong> y el apellido Romero. E-tickets: Santiago 2609558698136 · Josefina 2609558698135.
+    </div>
+  </section>
+
+  <section class="block reveal" id="ny" aria-labelledby="h-ny">
+    <div class="sec-label">Primera parada</div>
+    <h2 id="h-ny">Nueva York</h2>
+    <p class="sub">Lunes 26 de octubre al domingo 1 de noviembre · Halloween, dos noches de Harry Styles y la maratón de salida.</p>
+
+    <div class="card">
+      <div class="kicker">Alojamiento</div>
+      <p class="name">Aloft New York Chelsea</p>
+      <p class="addr">132 West 28th Street, Chelsea · nueve minutos a pie del Madison Square Garden</p>
+      <dl class="facts">
+        <dt>Habitación</dt><dd>King Room with City View, 20 m²</dd>
+        <dt>Confirmación</dt><dd>5210275591 · PIN 6274</dd>
+        <dt>Total</dt><dd>US$2.886,88 · no reembolsable</dd>
+        <dt>Horarios</dt><dd>check-in 16:00 · check-out 11:00</dd>
+        <dt>Teléfono</dt><dd>+1 212 510 7354</dd>
+      </dl>
+    </div>
+    <div class="note">
+      <span class="t">Al llegar</span>
+      Aterrizamos 09:30 y el check-in es a las 16:00: dejamos las maletas en conserjería y salimos a caminar. El hotel toma un depósito de garantía de US$200 en la tarjeta.
+    </div>
+
+    <h3>Las dos noches en el Garden</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th scope="col">Fecha</th><th scope="col">Ubicación</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">mié 28 oct</td><td>Sección 113, fila 7</td></tr>
+          <tr><td class="mono">vie 30 oct</td><td>Cancha</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note warn">
+      <span class="t">El horario del ticket engaña</span>
+      Dice 20:00, pero esas son las puertas de Jamie xx. Puertas 19:00 · Jamie xx 20:00 · <strong>Harry entre 21:00 y 21:15</strong> · termina cerca de 22:45. Hay tiempo de cenar tranquilos antes. Llegar con una hora de anticipación porque revisan bolsos.
+    </div>
+    <div class="note">
+      <span class="t">El escenario va al centro</span>
+      En redondo, no en un extremo, así que no hay mitad mala del Garden. Son veinticuatro canciones en tres actos y el setlist casi no cambia entre noches: el 30 no es otro concierto, es otro punto de vista del mismo. Cierra con <em>Aperture</em>, y el encore trae un tributo a Dolly Parton.
+    </div>
+    <div class="note">
+      <span class="t">Merch sin fila</span>
+      Hay un pop-up en 22 East 2nd Street abierto hasta el 1 de noviembre. Mucho mejor que la fila del Garden.
+    </div>
+
+    <h3>Ideas, sin horarios</h3>
+    <div class="ideas">
+      <div>
+        <h4>Caminar barrios</h4>
+        <ul>
+          <li>West Village <em>las calles que no siguen la cuadrícula</em></li>
+          <li>High Line <em>desde Gansevoort hasta Hudson Yards</em></li>
+          <li>SoHo y Nolita <em>vitrinas y veredas de fierro fundido</em></li>
+          <li>Puente de Brooklyn al atardecer <em>cruzar hacia Dumbo</em></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Museos y arte</h4>
+        <ul>
+          <li>The Met <em>viernes y sábado abre hasta las 21:00</em></li>
+          <li>MoMA <em>a pasos de Midtown</em></li>
+          <li>Whitney <em>al pie del High Line</em></li>
+          <li>The Frick <em>una casa, no un museo</em></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Comer y beber</h4>
+        <ul>
+          <li>Chelsea Market y Eataly <em>los dos al lado del hotel</em></li>
+          <li>Katz's y Russ &amp; Daughters <em>Lower East Side, clásicos de verdad</em></li>
+          <li>Via Carota <em>sin reserva, hay que esperar</em></li>
+          <li>Dante <em>para un negroni en el Village</em></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Vistas y clásicos</h4>
+        <ul>
+          <li>Top of the Rock <em>se ve el Empire State, que es el punto</em></li>
+          <li>Broadway <em>TKTS en Times Square vende el mismo día</em></li>
+          <li>Central Park por el norte <em>el Conservatory Garden, sin gente</em></li>
+          <li>Grand Central <em>entrar aunque no se tome un tren</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Dos fechas con la ciudad en contra</h3>
+    <div class="days">
+      <div class="day">
+        <div class="when">31 oct<span>sábado</span></div>
+        <div class="what"><b>Halloween</b>Village Halloween Parade por la Sexta Avenida. Es el mejor día del año para estar en Nueva York y también el peor para querer llegar a algún lado.</div>
+      </div>
+      <div class="day">
+        <div class="when">1 nov<span>domingo</span></div>
+        <div class="what"><b>Maratón de Nueva York, el día del vuelo</b>Cierres masivos de calles en los cinco distritos. <strong>Metro más AirTrain, no taxi.</strong> Salir de Manhattan a más tardar al mediodía para un vuelo que despega a las 16:30 desde la T8.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="fiji" aria-labelledby="h-fiji">
+    <div class="sec-label">Segunda parada</div>
+    <h2 id="h-fiji">Fiji</h2>
+    <p class="sub">Martes 3 al miércoles 11 de noviembre · ocho noches en la misma isla, que fue exactamente la decisión.</p>
+
+    <div class="card">
+      <div class="kicker">Alojamiento</div>
+      <p class="name">Waya Island Resort</p>
+      <p class="addr">Isla Waya, islas Yasawa · solo adultos</p>
+      <dl class="facts">
+        <dt>Villa</dt><dd>Deluxe Grand Villa, 65 m²</dd>
+        <dt>Confirmación</dt><dd>#13924 · cuenta #3209</dd>
+        <dt>Pagado</dt><dd>FJ$19.391,76 · impuestos incluidos</dd>
+        <dt>Check-out</dt><dd>10:00</dd>
+        <dt>Resort</dt><dd>+679 2298860 · +679 2298861</dd>
+        <dt>Reservas</dt><dd>+679 9982288 · también WhatsApp</dd>
+      </dl>
+    </div>
+
+    <h3>Lo que está incluido</h3>
+    <div class="ideas">
+      <div>
+        <h4>Todos los días</h4>
+        <ul>
+          <li>Desayuno, almuerzo y cena <em>más menú de pizza de 11:00 a 15:00</em></li>
+          <li>Equipo de snorkel y WiFi</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Regalo de luna de miel</h4>
+        <ul>
+          <li>Cena privada en la playa <em>con una botella de vino</em></li>
+          <li>Snorkel guiado al arrecife exterior <em>o con tiburones de arrecife, cada uno</em></li>
+          <li>Masaje de pareja de 60 minutos</li>
+          <li>Foot ritual de 15 minutos <em>cada uno</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Cómo se llega, el 3 de noviembre</h3>
+    <div class="days">
+      <div class="day"><div class="when">06:00</div><div class="what"><b>Aterrizamos en Nadi</b>FJ 0811 desde Los Ángeles.</div></div>
+      <div class="day"><div class="when">—</div><div class="what"><b>Nos esperan en el aeropuerto</b>Traslado privado a Port Denarau Marina, ya coordinado por el resort.</div></div>
+      <div class="day"><div class="when">07:30<span>a 08:30</span></div><div class="what"><b>Check-in del ferry</b>South Sea Cruises, Captain's Lounge. Franquicia de equipaje 25 kg por pasajero.</div></div>
+      <div class="day"><div class="when">08:45</div><div class="what"><b>Zarpa el Yasawa Flyer</b>Única salida del día.</div></div>
+      <div class="day"><div class="when">10:50</div><div class="what"><b>Llegamos a Waya</b>Dos horas de navegación entre islas.</div></div>
+    </div>
+
+    <h3>Cómo se sale, el 11 de noviembre</h3>
+    <div class="days">
+      <div class="day"><div class="when">10:00</div><div class="what"><b>Check-out</b>El resort da un bure de cortesía para ducharse y dejar el equipaje hasta la hora del ferry.</div></div>
+      <div class="day"><div class="when">15:35</div><div class="what"><b>Sale el ferry de Waya</b>El único del día.</div></div>
+      <div class="day"><div class="when">18:00</div><div class="what"><b>Llega a Port Denarau</b>Bus a Nadi International, 25 a 40 minutos.</div></div>
+      <div class="day"><div class="when">20:40</div><div class="what"><b>Cierra el check-in de Fiji Airways</b>Abre a las 18:40. El vuelo despega 21:40.</div></div>
+    </div>
+    <div class="note warn">
+      <span class="t">El punto más frágil del viaje</span>
+      El ferry puede atracar hasta las <strong>19:40</strong> y todavía alcanzamos. Son casi dos horas de colchón, pero es la única salida del día y South Sea Cruises no le responde a Fiji Airways. Si el ferry se atrasa de verdad, el vuelo se pierde.
+    </div>
+
+    <h3>Datos de la isla</h3>
+    <div class="ideas">
+      <div>
+        <h4>Salud</h4>
+        <ul>
+          <li>No hay hospital en Waya <em>todo lo serio se evacúa a Lautoka o Nadi</em></li>
+          <li>Emergency Medical Fiji <em>+679 770 7700, 24 horas</em></li>
+          <li>No tomar agua de la llave <em>las islas exteriores usan agua lluvia o pozo</em></li>
+          <li>Repelente con DEET <em>empieza la temporada de lluvias</em></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Práctico</h4>
+        <ul>
+          <li>Visa no se necesita <em>permiso de visitante hasta 4 meses al llegar</em></li>
+          <li>Tarjeta de llegada en papel <em>la dan en el avión, no hay trámite online</em></li>
+          <li>Se paga en dólares fijianos <em>no cambian moneda extranjera en el resort</em></li>
+          <li>Fiji va 15 horas adelante de Chile <em>todo el año, no tienen horario de verano</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="la" aria-labelledby="h-la">
+    <div class="sec-label">Tercera parada</div>
+    <h2 id="h-la">Los Ángeles</h2>
+    <p class="sub">Miércoles 11 al sábado 14 de noviembre · el cumpleaños de Josefina cae el viernes 13.</p>
+
+    <div class="card">
+      <div class="kicker">Alojamiento</div>
+      <p class="name">The Pierside Santa Monica</p>
+      <p class="addr">Santa Mónica, a pasos del muelle</p>
+      <dl class="facts">
+        <dt>Habitación</dt><dd>Standard King con vista</dd>
+        <dt>Confirmación</dt><dd>5980894668 · PIN 5436</dd>
+        <dt>Total</dt><dd>cerca de US$980, sin cargos ocultos</dd>
+      </dl>
+    </div>
+    <div class="note">
+      <span class="t">Sin auto, a propósito</span>
+      Uber para todo. El estacionamiento del hotel cuesta entre US$40 y 60 la noche con el auto parado, y Santa Mónica se camina entera. Santa Mónica a Universal son 34 km, cerca de 56 minutos, unos US$40 por tramo.
+    </div>
+
+    <div class="days">
+      <div class="day">
+        <div class="when">11 nov<span>miércoles</span></div>
+        <div class="what"><b>Llegada, y nada más</b>Aterrizamos al mediodía después de once horas de vuelo. Uber a Santa Mónica, check-in, siesta, caminar el muelle y cenar temprano. <strong>Nada ambicioso.</strong></div>
+      </div>
+      <div class="day">
+        <div class="when">12 nov<span>jueves</span></div>
+        <div class="what"><b>Universal Studios, día completo</b>Salir entre 9:30 y 10:00: esquiva el peor tráfico y calza con el jet lag. Studio Tour, Super Nintendo World, Harry Potter. Volver cerca de las 19:00.</div>
+      </div>
+      <div class="day">
+        <div class="when">13 nov<span>viernes · cumpleaños</span></div>
+        <div class="what"><b>Mañana libre, tarde en Griffith, cena</b>Venice y Abbot Kinney por la mañana. <strong>Griffith Observatory al atardecer</strong>, llegando a las 16:00 porque el sol se pone 16:50. Cena de cumpleaños en Santa Mónica.</div>
+      </div>
+      <div class="day">
+        <div class="when">14 nov<span>sábado</span></div>
+        <div class="what"><b>Dormir hasta tarde</b>Desayuno frente al mar y Uber a LAX a las 11:30 para el vuelo de las 14:55.</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <span class="t">Dos cosas que conviene saber</span>
+      El jet lag va a pegar fuerte: Fiji está <strong>21 horas adelante</strong> de Los Ángeles. Y el sol se pone a las 16:50, así que todo lo que queramos ver con luz tiene que pasar antes de las 16:30. Hollywood Boulevard decepciona; media hora basta. Griffith, en cambio, es gratis y vale el viaje.
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECCIÓN SENSIBLE
+       Confirmaciones y PINs de reserva. Para dejar la página apta
+       para cualquiera, borrar este <section> completo y los campos
+       "Confirmación" de las tres fichas de alojamiento.
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="block reveal" id="datos" aria-labelledby="h-datos">
+    <div class="sec-label">Para abrir en el camino</div>
+    <h2 id="h-datos">Datos clave</h2>
+    <p class="sub">Todo lo que habría que buscar en un correo viejo, en un solo lugar.</p>
+
+    <h3>Reservas</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th scope="col">Qué</th><th scope="col">Confirmación</th><th scope="col">Contacto</th></tr></thead>
+        <tbody>
+          <tr><td>Aloft New York Chelsea</td><td class="ref">5210275591 · PIN 6274</td><td class="ref">+1 212 510 7354</td></tr>
+          <tr><td>Waya Island Resort</td><td class="ref">#13924</td><td class="ref">+679 9982288</td></tr>
+          <tr><td>Ferry South Sea Cruises</td><td class="ref">1854297</td><td class="ref">+679 999 5512</td></tr>
+          <tr><td>The Pierside Santa Monica</td><td class="ref">5980894668 · PIN 5436</td><td>—</td></tr>
+          <tr><td>LATAM ida</td><td class="ref">OQYFAV</td><td>—</td></tr>
+          <tr><td>Fiji Airways JFK → NAN</td><td class="ref">84J7UI</td><td>—</td></tr>
+          <tr><td>Fiji Airways NAN → LAX</td><td class="ref">DOG8B4</td><td>—</td></tr>
+          <tr><td>LATAM vuelta</td><td class="ref">EXSTHB</td><td>—</td></tr>
+          <tr><td>LATAM Pass</td><td class="ref">190903877 · Gold</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Emergencias</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th scope="col">Dónde</th><th scope="col">Número</th></tr></thead>
+        <tbody>
+          <tr><td>Estados Unidos, emergencias</td><td class="ref">911</td></tr>
+          <tr><td>Fiji, emergencias</td><td class="ref">911</td></tr>
+          <tr><td>Fiji, evacuación médica 24/7</td><td class="ref">+679 770 7700</td></tr>
+          <tr><td>Hospital de Lautoka</td><td class="ref">+679 666 0399</td></tr>
+          <tr><td>Hospital de Nadi</td><td class="ref">+679 670 1128</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Husos horarios</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th scope="col">Desde Chile</th><th scope="col">Diferencia</th></tr></thead>
+        <tbody>
+          <tr><td>Nueva York</td><td>2 horas atrás</td></tr>
+          <tr><td>Los Ángeles</td><td>5 horas atrás</td></tr>
+          <tr><td>Fiji</td><td>15 horas adelante</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════ fin sección sensible ═══ -->
+
+  <section class="block reveal" id="antes" aria-labelledby="h-antes">
+    <div class="sec-label">Pendiente</div>
+    <h2 id="h-antes">Antes de salir</h2>
+    <ul class="todo">
+      <li><span class="box" aria-hidden="true"></span><div><strong>Entradas de Universal Studios</strong><em>Para el jueves 12 de noviembre.</em></div></li>
+      <li><span class="box" aria-hidden="true"></span><div><strong>Seguro de viaje</strong><em>Con evacuación médica, porque son ocho días en una isla sin hospital, y con cobertura de atraso y pérdida de conexión por el ferry del 11.</em></div></li>
+      <li><span class="box" aria-hidden="true"></span><div><strong>Restaurante de cumpleaños</strong><em>Viernes 13 en Santa Mónica.</em></div></li>
+      <li><span class="box" aria-hidden="true"></span><div><strong>Revisar vigencia de los dos pasaportes</strong><em>Fiji exige seis meses desde la llegada: deben vencer después del 3 de mayo de 2027.</em></div></li>
+      <li><span class="box" aria-hidden="true"></span><div><strong>Check-in de Fiji Airways</strong><em>Se abre el 31 de octubre, estando ya en Nueva York.</em></div></li>
+      <li><span class="box" aria-hidden="true"></span><div><strong>Confirmar que llegaron las entradas del 30</strong><em>El 27 de octubre, ya en Nueva York. Si no están, escalar ese mismo día y no esperar al 30.</em></div></li>
+      <li><span class="box" aria-hidden="true"></span><div><strong>Llevar efectivo en dólares fijianos</strong><em>En Waya no cambian moneda extranjera.</em></div></li>
+    </ul>
+  </section>
+
+</main>
+</div>
+
+<footer>
+  <div class="footer-names">Josefina &amp; Santiago</div>
+  <div class="footer-sub">23 · 10 · 2026 · Casona Johnson</div>
+  <div class="footer-nav">
+    <a href="/">Inicio</a>
+    <a href="/novios.html">Los novios</a>
+    <a href="/LM/">Luna de miel</a>
+  </div>
+  <div class="footer-hr"></div>
+  <div class="footer-credit">info@kiki.cl &nbsp;·&nbsp; Producción: Kiki, Princess Killer Juanita III</div>
+</footer>
+
+<script>
+/* ── Scroll reveal ── */
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    for (var i = 0; i < els.length; i++) els[i].classList.add('visible');
+    return;
+  }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        setTimeout(function () { e.target.classList.add('visible'); }, 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.10 });
+  els.forEach(function (el) { obs.observe(el); });
+})();
+</script>
+
+</body>
+</html>
