@@ -1,1 +1,6 @@
-[]
+[
+  { "src": "fotos/01-cintas.jpg",     "w": 359, "h": 532, "alt": "Los novios bailando bajo las cintas" },
+  { "src": "fotos/02-beso-doble.jpg", "w": 359, "h": 532, "alt": "Beso doble con anteojos en la pista" },
+  { "src": "fotos/03-bailando.jpg",   "w": 359, "h": 532, "alt": "Invitados bailando" },
+  { "src": "fotos/04-copete.jpg",     "w": 359, "h": 532, "alt": "Sirviendo los copetes" }
+]
