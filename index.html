@@ -154,6 +154,8 @@ body::before {
 }
 .gallery-empty p { font-size: 13px; line-height: 1.9; color: var(--muted); }
 .more { margin-top: 30px; }
+.section p.lead[hidden] { display: none; }
+.gallery-wrap .more .btn { margin-top: 10px; }
 
 /* Lightbox */
 .lb { position: fixed; inset: 0; background: rgba(31,30,27,.94); display: none;
@@ -283,6 +285,8 @@ footer { padding: 50px 24px 36px; text-align: center; background: var(--cream); 
   <div class="reveal">
     <span class="eyebrow">Las fotos</span>
     <h2>Para que te acuerdes<br><em>de lo que no te acuerdas</em></h2>
+    <p class="lead" id="gallery-lead" hidden>Un adelanto de las cámaras de rollo que anduvieron por las mesas.
+      Las del fotógrafo vienen en camino.</p>
   </div>
   <div class="gallery-wrap">
     <div class="gallery" id="gallery" hidden></div>
@@ -292,7 +296,10 @@ footer { padding: 50px 24px 36px; text-align: center; background: var(--cream); 
          Apenas las tengamos, aparecen acá. Mientras tanto, sube las tuyas.</p>
     </div>
     <div class="more" id="gallery-more" hidden>
-      <a class="link" id="album-link" href="#" target="_blank" rel="noopener" style="margin:0 auto">Ver el álbum completo →</a>
+      <a class="btn" id="album-link" href="#" target="_blank" rel="noopener" style="margin-top:10px">
+        Ver todas las fotos
+        <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -376,7 +383,7 @@ footer { padding: 50px 24px 36px; text-align: center; background: var(--cream); 
    desactivado con el texto "Muy pronto".                       */
 const SUBIR_FOTOS_URL = 'https://photos.app.goo.gl/wFcKRnNJ5wzmzXtY7';
 /* Link opcional al álbum completo del fotógrafo (Drive, Pixieset, etc.). */
-const ALBUM_COMPLETO_URL = '';
+const ALBUM_COMPLETO_URL = 'https://photos.app.goo.gl/wFcKRnNJ5wzmzXtY7';
 /* ══════════════════════════════════════════════════════════════ */
 
 /* ── Botón de subir ── */
@@ -447,8 +454,11 @@ fetch('fotos/fotos.json', { cache: 'no-cache' })
       b.appendChild(img); b.onclick = () => openLb(i);
       g.appendChild(b);
     });
+    /* Con pocas fotos, una sola fila en vez de columnas con huecos */
+    if (photos.length <= 4) g.style.columns = photos.length + ' 200px';
     g.hidden = false;
     document.getElementById('gallery-empty').hidden = true;
+    document.getElementById('gallery-lead').hidden = false;
   })
   .catch(() => {});
 
