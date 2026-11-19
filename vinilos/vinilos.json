@@ -1,0 +1,263 @@
+{
+  "actualizado": "2026-11-19",
+  "coleccion": [
+    {
+      "id": "alessi",
+      "artista": "Alessi",
+      "album": "All for a Reason",
+      "anio": 1977,
+      "genero": "Soft rock",
+      "cover": "covers/alessi.jpg"
+    },
+    {
+      "id": "amy",
+      "artista": "Amy Winehouse",
+      "album": "Back to Black",
+      "anio": 2006,
+      "genero": "Soul",
+      "cover": "covers/amy.jpg"
+    },
+    {
+      "id": "badbunny",
+      "artista": "Bad Bunny",
+      "album": "Debí Tirar Más Fotos",
+      "anio": 2025,
+      "genero": "Latino",
+      "cover": "covers/badbunny.jpg"
+    },
+    {
+      "id": "beatles",
+      "artista": "The Beatles",
+      "album": "Sgt. Pepper's Lonely Hearts Club Band",
+      "anio": 1967,
+      "genero": "Rock",
+      "cover": "covers/beatles.jpg"
+    },
+    {
+      "id": "boz",
+      "artista": "Boz Scaggs",
+      "album": "Silk Degrees",
+      "anio": 1976,
+      "genero": "Soft rock",
+      "cover": "covers/boz.jpg"
+    },
+    {
+      "id": "carole",
+      "artista": "Carole King",
+      "album": "Her Greatest Hits: Songs of Long Ago",
+      "anio": 1978,
+      "genero": "Cantautores",
+      "cover": "covers/carole.jpg",
+      "nota": "Doblado al inicio: saltar la primera canción. El resto se escucha sin problema."
+    },
+    {
+      "id": "cat",
+      "artista": "Cat Stevens / Yusuf",
+      "album": "On the Road to Findout",
+      "anio": 2025,
+      "genero": "Cantautores",
+      "cover": "covers/cat.jpg",
+      "edicion": "2LP vinilo azul · exclusivo Barnes & Noble"
+    },
+    {
+      "id": "coldplay",
+      "artista": "Coldplay",
+      "album": "Parachutes",
+      "anio": 2000,
+      "genero": "Rock",
+      "cover": "covers/coldplay.jpg"
+    },
+    {
+      "id": "daftpunk",
+      "artista": "Daft Punk",
+      "album": "Random Access Memories",
+      "anio": 2013,
+      "genero": "Electrónica",
+      "cover": "covers/daftpunk.jpg"
+    },
+    {
+      "id": "fleetwood",
+      "artista": "Fleetwood Mac",
+      "album": "Greatest Hits",
+      "anio": 1988,
+      "genero": "Rock",
+      "cover": "covers/fleetwood.jpg",
+      "edicion": "Deluxe Edition"
+    },
+    {
+      "id": "harry1",
+      "artista": "Harry Styles",
+      "album": "Harry Styles",
+      "anio": 2017,
+      "genero": "Pop",
+      "cover": "covers/harry1.jpg"
+    },
+    {
+      "id": "fineline",
+      "artista": "Harry Styles",
+      "album": "Fine Line",
+      "anio": 2019,
+      "genero": "Pop",
+      "cover": "covers/fineline.jpg"
+    },
+    {
+      "id": "harryshouse",
+      "artista": "Harry Styles",
+      "album": "Harry's House",
+      "anio": 2022,
+      "genero": "Pop",
+      "cover": "covers/harryshouse.jpg"
+    },
+    {
+      "id": "kiss",
+      "artista": "Harry Styles",
+      "album": "Kiss All the Time. Disco, Occasionally.",
+      "anio": 2026,
+      "genero": "Pop",
+      "cover": "covers/kiss.jpg"
+    },
+    {
+      "id": "buckley",
+      "artista": "Jeff Buckley",
+      "album": "Grace",
+      "anio": 1994,
+      "genero": "Rock",
+      "cover": "covers/buckley.jpg"
+    },
+    {
+      "id": "justice",
+      "artista": "Justice",
+      "album": "† (Cross)",
+      "anio": 2007,
+      "genero": "Electrónica",
+      "cover": "covers/justice.jpg"
+    },
+    {
+      "id": "kendrick",
+      "artista": "Kendrick Lamar",
+      "album": "good kid, m.A.A.d city",
+      "anio": 2012,
+      "genero": "Hip hop",
+      "cover": "covers/kendrick.jpg"
+    },
+    {
+      "id": "mozart",
+      "artista": "Mozart",
+      "album": "Divertimento en mi bemol mayor, K. 563",
+      "anio": 1967,
+      "genero": "Clásica",
+      "cover": "covers/mozart.jpg",
+      "edicion": "Grumiaux Trio · Philips"
+    },
+    {
+      "id": "1d",
+      "artista": "One Direction",
+      "album": "Four",
+      "anio": 2014,
+      "genero": "Pop",
+      "cover": "covers/1d.jpg"
+    },
+    {
+      "id": "rupert",
+      "artista": "Rupert Holmes",
+      "album": "Adventure",
+      "anio": 1980,
+      "genero": "Soft rock",
+      "cover": "covers/rupert.jpg",
+      "edicion": "Edición japonesa (Victor)"
+    },
+    {
+      "id": "simon",
+      "artista": "Simon & Garfunkel",
+      "album": "Bridge Over Troubled Water",
+      "anio": 1970,
+      "genero": "Cantautores",
+      "cover": "covers/simon.jpg"
+    },
+    {
+      "id": "soda",
+      "artista": "Soda Stereo",
+      "album": "Nada Personal",
+      "anio": 1985,
+      "genero": "Latino",
+      "cover": "covers/soda.jpg"
+    }
+  ],
+  "deseos": [
+    {
+      "id": "bennysings-music",
+      "artista": "Benny Sings",
+      "album": "Music",
+      "anio": 2021,
+      "genero": "Pop",
+      "comentario": "Cualquier disco de Benny Sings me gusta, pero este es el favorito.",
+      "cover": "covers/bennysings-music.jpg"
+    },
+    {
+      "id": "ca7riel-papota",
+      "artista": "Ca7riel & Paco Amoroso",
+      "album": "Papota",
+      "anio": 2025,
+      "genero": "Latino",
+      "cover": "covers/ca7riel-papota.jpg"
+    },
+    {
+      "id": "coldplay-rush",
+      "artista": "Coldplay",
+      "album": "A Rush of Blood to the Head",
+      "anio": 2002,
+      "genero": "Rock",
+      "cover": "covers/coldplay-rush.jpg"
+    },
+    {
+      "id": "drhook-pleasure",
+      "artista": "Dr. Hook",
+      "album": "Pleasure and Pain",
+      "anio": 1978,
+      "genero": "Soft rock",
+      "cover": "covers/drhook-pleasure.jpg"
+    },
+    {
+      "id": "elton-gybr",
+      "artista": "Elton John",
+      "album": "Goodbye Yellow Brick Road",
+      "anio": 1973,
+      "genero": "Rock",
+      "cover": "covers/elton-gybr.jpg"
+    },
+    {
+      "id": "parcels-live1",
+      "artista": "Parcels",
+      "album": "Live Vol. 1",
+      "anio": 2020,
+      "genero": "Pop",
+      "comentario": "Disco en vivo, doble LP.",
+      "cover": "covers/parcels-live1.jpg"
+    },
+    {
+      "id": "pcrc-beta",
+      "artista": "Peter Cat Recording Co.",
+      "album": "Beta",
+      "anio": 2024,
+      "genero": "Indie",
+      "cover": "covers/pcrc-beta.jpg"
+    },
+    {
+      "id": "silksonic",
+      "artista": "Silk Sonic",
+      "subartista": "Bruno Mars & Anderson .Paak",
+      "album": "An Evening with Silk Sonic",
+      "anio": 2021,
+      "genero": "Soul",
+      "cover": "covers/silksonic.jpg"
+    },
+    {
+      "id": "teleradio-bailar",
+      "artista": "Teleradio Donoso",
+      "album": "Bailar y llorar",
+      "anio": 2008,
+      "genero": "Latino",
+      "cover": "covers/teleradio-bailar.jpg"
+    }
+  ]
+}
