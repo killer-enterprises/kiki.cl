@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <title>Gracias · Josefina & Santiago · 23.10.2026</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Gracias por venir. Fotos del matrimonio de Josefina y Santiago.">
+<meta name="description" content="Gracias por venir. Las fotos del matrimonio de Josefina y Santiago: las del fotógrafo y las de todos.">
 <meta property="og:title" content="Gracias por venir · Josefina & Santiago">
-<meta property="og:description" content="Fue una hemorragia de placer. Acá van a estar las fotos.">
+<meta property="og:description" content="Volvimos de la luna de miel y llegaron las fotos.">
 <meta property="og:image" content="https://kiki.cl/juntos2.JPG">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
@@ -135,6 +135,16 @@ body::before {
 .btn.ghost:hover { background: var(--gold); color: var(--ink); }
 .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
 
+/* ─── FOTÓGRAFO ──────────────────────────────────────────── */
+.pro { background: var(--ink); color: var(--cream); }
+.pro .eyebrow { color: var(--gold); }
+.pro h2 { font-size: clamp(44px, 9vw, 92px); }
+.pro h2 em { color: var(--gold); }
+.pro p.lead { color: rgba(246,242,235,.6); }
+.pro-credit { margin-top: 28px; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(246,242,235,.35); }
+.hero-hint { display: inline-block; text-decoration: none; }
+.married { border-top: 1px solid rgba(246,242,235,.08); }
+
 /* ─── GALERÍA ─────────────────────────────────────────────── */
 .gallery-wrap { max-width: 1200px; margin: 60px auto 0; }
 .gallery { columns: 3 280px; column-gap: 14px; }
@@ -257,36 +267,38 @@ footer { padding: 50px 24px 36px; text-align: center; background: var(--cream); 
   <div>
     <span class="eyebrow">Ya está · Nos casamos</span>
     <h1 class="hero-big">Gracias<em>por venir</em></h1>
-    <div class="hero-tag">Fue una hemorragia de placer.</div>
     <p class="hero-sub">
-      Si volviste a entrar es porque todavía no te recuperas.<br>
-      Nosotros tampoco.
+      Volvimos de la luna de miel y llegaron las fotos.<br>
+      Primero las de Guille, después las de todos.
     </p>
     <div class="hero-date"><span>Josefina &amp; Santiago</span><span>23 · 10 · 2026</span></div>
     <div class="hero-rule"></div>
-    <div class="hero-hint">Las fotos ↓</div>
+    <a class="hero-hint" href="#fotos">Las fotos ↓</a>
   </div>
 </section>
 
-<!-- ════ CONTADOR ═══════════════════════════════════════════ -->
-<section class="married">
-  <span class="eyebrow">Llevamos casados</span>
-  <div class="married-count" aria-live="off">
-    <div class="married-unit"><div class="married-num" id="m-days">0</div><div class="married-lbl">Días</div></div>
-    <div class="married-unit"><div class="married-num" id="m-hours">00</div><div class="married-lbl">Horas</div></div>
-    <div class="married-unit"><div class="married-num" id="m-mins">00</div><div class="married-lbl">Minutos</div></div>
-    <div class="married-unit"><div class="married-num" id="m-secs">00</div><div class="married-lbl">Segundos</div></div>
+<!-- ════ FOTÓGRAFO ══════════════════════════════════════════ -->
+<section class="section pro" id="fotos">
+  <div class="reveal">
+    <span class="eyebrow">Las fotos oficiales</span>
+    <h2>Las de <em>Guille</em></h2>
+    <p class="lead">Las fotos profesionales de Guille Alessandri, en su máxima calidad.
+      Se pueden ver, marcar las favoritas y descargar.</p>
+    <a class="btn ghost" id="pro-btn" href="#" target="_blank" rel="noopener">
+      Ver la galería
+      <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+    </a>
+    <div class="pro-credit">Fotografía · Guille Alessandri</div>
   </div>
-  <p class="married-note">Y contando. Sin garantía.</p>
 </section>
 
 <!-- ════ GALERÍA ════════════════════════════════════════════ -->
-<section class="section" id="fotos">
+<section class="section" id="fotos-todos">
   <div class="reveal">
-    <span class="eyebrow">Las fotos</span>
+    <span class="eyebrow">Las de todos</span>
     <h2>Para que te acuerdes<br><em>de lo que no te acuerdas</em></h2>
-    <p class="lead" id="gallery-lead" hidden>Un adelanto de las cámaras de rollo que anduvieron por las mesas.
-      Las del fotógrafo vienen en camino.</p>
+    <p class="lead" id="gallery-lead" hidden>Las de las cámaras de rollo que anduvieron por las mesas
+      y las que sacaron ustedes con el celular, todas juntas en Google Fotos.</p>
   </div>
   <div class="gallery-wrap">
     <div class="gallery" id="gallery" hidden></div>
@@ -297,7 +309,7 @@ footer { padding: 50px 24px 36px; text-align: center; background: var(--cream); 
     </div>
     <div class="more" id="gallery-more" hidden>
       <a class="btn" id="album-link" href="#" target="_blank" rel="noopener" style="margin-top:10px">
-        Ver todas las fotos
+        Ver el álbum en Google Fotos
         <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
       </a>
     </div>
@@ -333,8 +345,20 @@ footer { padding: 50px 24px 36px; text-align: center; background: var(--cream); 
   </div>
 </section>
 
+<!-- ════ CONTADOR ═══════════════════════════════════════════ -->
+<section class="married">
+  <span class="eyebrow">Llevamos casados</span>
+  <div class="married-count" aria-live="off">
+    <div class="married-unit"><div class="married-num" id="m-days">0</div><div class="married-lbl">Días</div></div>
+    <div class="married-unit"><div class="married-num" id="m-hours">00</div><div class="married-lbl">Horas</div></div>
+    <div class="married-unit"><div class="married-num" id="m-mins">00</div><div class="married-lbl">Minutos</div></div>
+    <div class="married-unit"><div class="married-num" id="m-secs">00</div><div class="married-lbl">Segundos</div></div>
+  </div>
+  <p class="married-note">Y contando. Sin garantía.</p>
+</section>
+
 <!-- ════ NOVIOS ═════════════════════════════════════════════ -->
-<section class="section" style="padding-top:110px">
+<section class="section">
   <div class="novios reveal">
     <div class="novios-photo" role="img" aria-label="Josefina y Santiago"></div>
     <div class="novios-text">
@@ -357,7 +381,8 @@ footer { padding: 50px 24px 36px; text-align: center; background: var(--cream); 
   <div class="footer-names">Josefina &amp; Santiago</div>
   <div class="footer-sub">23 · 10 · 2026 · Casona Johnson</div>
   <nav class="footer-nav">
-    <a href="#fotos">Fotos</a>
+    <a href="#fotos">Fotos de Guille</a>
+    <a href="#fotos-todos">Fotos de todos</a>
     <a href="#subir">Sube las tuyas</a>
     <a href="novios.html">Los novios</a>
     <a href="save-the-date/">Save the date</a>
@@ -384,6 +409,9 @@ footer { padding: 50px 24px 36px; text-align: center; background: var(--cream); 
 const SUBIR_FOTOS_URL = 'https://photos.app.goo.gl/wFcKRnNJ5wzmzXtY7';
 /* Link opcional al álbum completo del fotógrafo (Drive, Pixieset, etc.). */
 const ALBUM_COMPLETO_URL = 'https://photos.app.goo.gl/wFcKRnNJ5wzmzXtY7';
+/* Galería profesional de Guille Alessandri (pic-time, link para compartir). */
+const FOTOGRAFO_URL = 'https://guillefoto.pic-time.com/-matri-jose-gallardo-santi-romero/gallery';
+document.getElementById('pro-btn').href = FOTOGRAFO_URL;
 /* ══════════════════════════════════════════════════════════════ */
 
 /* ── Botón de subir ── */
