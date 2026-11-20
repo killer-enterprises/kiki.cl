@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-19",
+  "actualizado": "2026-11-20",
   "coleccion": [
     {
       "id": "alessi",
@@ -258,6 +258,14 @@
       "anio": 2008,
       "genero": "Latino",
       "cover": "covers/teleradio-bailar.jpg"
+    },
+    {
+      "id": "toto-toto",
+      "artista": "Toto",
+      "album": "Toto",
+      "anio": 1978,
+      "genero": "Soft rock",
+      "cover": "covers/toto-toto.jpg"
     }
   ]
 }
