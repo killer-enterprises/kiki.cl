@@ -181,6 +181,14 @@
       "anio": 1985,
       "genero": "Latino",
       "cover": "covers/soda.jpg"
+    },
+    {
+      "id": "phil",
+      "artista": "Phil Collins",
+      "album": "No Jacket Required",
+      "anio": 1985,
+      "genero": "Pop",
+      "cover": "covers/phil.jpg"
     }
   ],
   "deseos": [
