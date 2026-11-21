@@ -189,6 +189,23 @@
       "anio": 1985,
       "genero": "Pop",
       "cover": "covers/phil.jpg"
+    },
+    {
+      "id": "marley",
+      "artista": "Bob Marley & The Wailers",
+      "album": "Legend",
+      "anio": 1984,
+      "genero": "Reggae",
+      "cover": "covers/marley.jpg",
+      "edicion": "2LP 180 g"
+    },
+    {
+      "id": "misch",
+      "artista": "Tom Misch",
+      "album": "Full Circle",
+      "anio": 2026,
+      "genero": "Soul",
+      "cover": "covers/misch.jpg"
     }
   ],
   "deseos": [
