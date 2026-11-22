@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-20",
+  "actualizado": "2026-11-22",
   "coleccion": [
     {
       "id": "alessi",
@@ -206,6 +206,22 @@
       "anio": 2026,
       "genero": "Soul",
       "cover": "covers/misch.jpg"
+    },
+    {
+      "id": "laley",
+      "artista": "La Ley",
+      "album": "MTV Unplugged",
+      "anio": 2001,
+      "genero": "Latino",
+      "cover": "covers/laley.jpg"
+    },
+    {
+      "id": "prisioneros",
+      "artista": "Los Prisioneros",
+      "album": "Corazones",
+      "anio": 1990,
+      "genero": "Latino",
+      "cover": "covers/prisioneros.jpg"
     }
   ],
   "deseos": [
